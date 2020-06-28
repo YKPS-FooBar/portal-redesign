@@ -1,0 +1,53 @@
+body {
+    font-family: "Trebuchet MS";
+}
+
+.bg-ykpao {
+    background-color: #5cb531;
+}
+
+.text-ykpao {
+    color: #5cb531;
+}
+
+.square:before {
+    content: '';
+    display: block;
+    padding-top: 100%;
+}
+
+.hover-shadow-lg {
+    transition: box-shadow 0.4s ease;
+}
+
+.hover-shadow-lg:hover {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+    z-index: 1;
+}
+
+.card-col {
+    padding: 0 2% 4% 2%;
+}
+
+.card-title {
+    font-size: 0.75rem;
+    line-height: 100%;
+}
+
+@media (min-width: 576px) {
+    .card-title {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .card-title {
+        font-size: 1.25rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .card-title {
+        font-size: 1rem;
+    }
+}
