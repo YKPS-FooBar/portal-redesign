@@ -51,3 +51,8 @@ body {
         font-size: 1rem;
     }
 }
+
+.foobar::selection {
+    color: #839496;
+    text-shadow: 1px 1px 0 #002b36;
+}
