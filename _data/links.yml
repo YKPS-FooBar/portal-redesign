@@ -92,12 +92,21 @@
 
 - name: Khan Academy
   url: https://www.khanacademy.org/
+  icon: /assets/khan-academy.svg
+  color: "#ffffff"
+  background: "#0a2a66"
 
-- name: Library Guides
+- name: LibGuides
   url: https://libguides.ykpaoschool.cn/
+  icon: /assets/ykpao.png
+  color: "#ffffff"
+  background: "#357727"
 
 - name: Naxos Music Library
   url: https://www.naxosmusiclibrary.com/
+  icon: /assets/naxos-music-library.ico
+  color: "#ffffff"
+  background: "#41a0cf"
 
 - name: Newsela
   url: https://newsela.com/

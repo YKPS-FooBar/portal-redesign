@@ -4,6 +4,7 @@ layout: default
 
 <div class="row">
   <div class="col-12 col-lg-7 px-4 my-4">
+    <h3>Links</h3>
     <div class="row" style="margin: 0 -2% -4% -2%;">
       {%- assign home_links = site.data.links | where: "home", true -%}
       {%- for link in home_links -%}
@@ -19,12 +20,14 @@ layout: default
     </div>
   </div>
 
-  <div class="col-12 col-lg-5 px-4 my-4">
-    <object class="text-center w-100 h-100" style="min-height: 400px;" data="/assets/daily-bulletin.pdf#toolbar=0" type="application/pdf">
-      <a href="/assets/daily-bulletin.pdf">Daily Bulletin</a>
-    </object>
+  <div class="col-12 col-lg-5 px-4 my-4 d-flex flex-column">
+    <h3>Daily Bulletin</h3>
 
-    <div class="position-absolute shadow-sm hover-shadow-lg" style="top: 0; left: 0; bottom: 0; right: 0; margin: 0 1.5rem; cursor: zoom-in" data-toggle="modal" data-target="#daily-bulletin"></div>
+    <div class="shadow-sm hover-shadow-lg flex-fill d-flex" style="cursor: zoom-in;" data-toggle="modal" data-target="#daily-bulletin">
+      <iframe class="text-center w-100 h-100" style="min-height: 400px; pointer-events: none;" frameborder="no" src="/assets/daily-bulletin.pdf#toolbar=0">
+        <a href="/assets/daily-bulletin.pdf">Daily Bulletin</a>
+      </iframe>
+    </div>
 
     <div class="modal" id="daily-bulletin" tabindex="-1">
       <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -37,12 +40,21 @@ layout: default
     </div>
   </div>
 
-  <div class="col-12 col-lg-5 px-4 my-4">
-    <object class="text-center w-100 h-100" style="min-height: 400px;" data="/assets/news-updates.pdf#toolbar=0" type="application/pdf">
-      <a href="/assets/news-updates.pdf">News & Updates</a>
-    </object>
+  <div class="col-12 col-lg-7 px-4 my-4 d-flex flex-column">
+    <h3>Calendar</h3>
+    <div class="shadow-sm hover-shadow-lg flex-fill d-flex">
+      <iframe class="text-center w-100 h-100" style="min-height: 400px;" src="https://outlook.office.com/calendar/view/month" frameborder="0" scrolling="no">Calendar</iframe>
+    </div>
+  </div>
 
-    <div class="position-absolute shadow-sm hover-shadow-lg" style="top: 0; left: 0; bottom: 0; right: 0; margin: 0 1.5rem; cursor: zoom-in" data-toggle="modal" data-target="#news-updates"></div>
+  <div class="col-12 col-lg-5 px-4 my-4 d-flex flex-column">
+    <h3>News & Updates</h3>
+
+    <div class="shadow-sm hover-shadow-lg flex-fill d-flex" style="cursor: zoom-in;" data-toggle="modal" data-target="#news-updates">
+      <iframe class="text-center w-100 h-100" style="min-height: 400px; pointer-events: none;" frameborder="no" src="/assets/news-updates.pdf#toolbar=0">
+        <a href="/assets/news-updates.pdf">News & Updates</a>
+      </iframe>
+    </div>
 
     <div class="modal" id="news-updates" tabindex="-1">
       <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -53,9 +65,5 @@ layout: default
         </div>
       </div>
     </div>
-  </div>
-
-  <div class="col-12 col-lg-7 px-4 my-4">
-    <iframe src="https://outlook.office.com/owa/?realm=ykpaoschool.cn#path=/calendar/view/month" class="text-center w-100 h-100 shadow-sm" style="min-height: 400px;" frameborder="0" scrolling="no">Calendar</iframe>
   </div>
 </div>
