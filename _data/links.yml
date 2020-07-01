@@ -61,7 +61,7 @@
 
 - name: Calendar
   url: https://outlook.office.com/owa/?realm=ykpaoschool.cn#path=/calendar/view/month
-  icon: /assets/outlook.svg
+  icon: /assets/calendar.svg
   color: "#201f1e"
   background: "#edebe9"
 
