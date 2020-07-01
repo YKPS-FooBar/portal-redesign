@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<div class="row">
+  <div class="col px-4 my-4">
+    <div class="row" style="margin: 0 -2% -4% -2%;">
+      {%- for link in site.data.links -%}
+        <div class="col-4 col-xl-3 card-col">
+          <a class="card square rounded-0 shadow-sm hover-shadow-lg" style="color: {{ link.color }}; background-color: {{ link.background }};" href="{{ link.url }}">
+            <img class="card-img link-icon{% if link.wide_icon %}-wide{% endif %}" src="{{ link.icon }}">
+            <div class="card-img-overlay text-center p-2">
+              <p class="card-title" style="margin-top: 70%;">{{ link.name }}</p>
+            </div>
+          </a>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>

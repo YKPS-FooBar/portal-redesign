@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>YKPS Portal</title>
+
+    <link rel="stylesheet" href="/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body class="d-flex flex-column h-100">
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top bg-ykpao">
+      <a class="navbar-brand" href="/">YKPS Portal</a>
+
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapsed">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbar-collapsed">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="/clubs">Clubs</a></li>
+          <li class="nav-item"><a class="nav-link" href="/links">Links</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="container-fluid" style="padding: 10% 10% 5% 10%;">
+      {{ content }}
+    </main>
+
+    <footer class="mt-auto">
+      <div class="container-fluid text-center py-2 bg-light border-top justify-text-center">
+        Website by the <span class="foobar">Foo Bar</span>
+      </div>
+    </footer>
+
+    <script src="/jquery-3.5.1.min.js"></script>
+    <script src="/bootstrap/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

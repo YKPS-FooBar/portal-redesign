@@ -56,3 +56,23 @@ body {
     color: #839496;
     text-shadow: 1px 1px 0 #002b36;
 }
+
+.link-icon {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 30% auto 0 auto;
+    width: auto;
+    max-width: 50%;
+    height: 25%;
+}
+
+.link-icon-wide {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 35% auto 0 auto;
+    width: auto;
+    max-width: 70%;
+    max-height: 25%;
+}
