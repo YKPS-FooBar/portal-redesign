@@ -23,8 +23,8 @@
 
       <div class="collapse navbar-collapse" id="navbar-collapsed">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item"><a class="nav-link" href="/clubs">Clubs</a></li>
-          <li class="nav-item"><a class="nav-link" href="/links">Links</a></li>
+          <li class="nav-item"><a class="nav-link{% if page.name == "clubs.html" %} active{% endif %}" href="/clubs">Clubs</a></li>
+          <li class="nav-item"><a class="nav-link{% if page.name == "links.html" %} active{% endif %}" href="/links">Links</a></li>
         </ul>
       </div>
     </nav>
