@@ -1,195 +1,145 @@
 [
-{
-  "name": "PowerSchool",
-  "url": "https://powerschool.ykpaoschool.cn/public/",
-  "icon": "/assets/powerschool.svg",
-  "color": "#ffffff",
-  "background": "#00427c",
-  "home": true
-},
-{
-  "name": "PowerTeacher",
-  "url": "https://powerschool.ykpaoschool.cn/teachers/pw.html",
-  "icon": "/assets/powerschool.svg",
-  "color": "#ffffff",
-  "background": "#00427c",
-  "home": true
-},
-{
+  {
+    "name": "PowerSchool",
+    "url": "https://powerschool.ykpaoschool.cn/public/",
+    "icon": "powerschool.svg",
+    "color": "#ffffff",
+    "background": "#00427c",
+    "home": true,
+    "desc": "hi"
+  },
+  {
+    "name": "PowerTeacher",
+    "url": "https://powerschool.ykpaoschool.cn/teachers/pw.html",
+    "icon": "powerschool.svg",
+    "color": "#ffffff",
+    "background": "#00427c",
+    "home": true
+  },
+  {
   "name": "PowerSchool Learning",
   "url": "https://ykpaoschool.learning.powerschool.com/",
-  "icon": "/assets/powerschool.svg",
+  "icon": "powerschool.svg",
   "color": "#ffffff",
   "background": "#00427c",
   "home": true
-},
-{
-  "name": "Email",
-  "url": "http://mail.ykpaoschool.cn/",
-  "icon": "/assets/outlook.svg",
-  "color": "#201f1e",
-  "background": "#edebe9",
-  "home": true
-},
-{
-  "name": "ManageBac",
-  "url": "https://ykps.managebac.cn/",
-  "icon": "/assets/managebac.svg",
-  "color": "#293041",
-  "background": "#eff6ff",
-  "home": true
-},
-{
-  "name": "CHQ",
-  "url": "https://seasia.mychq.net/ykpao",
-  "icon": "/assets/chq.jpg",
-  "color": "#690d6c",
-  "background": "#ffffff",
-  "home": true
-},
-{
-  "name": "OneDrive",
-  "url": "https://ykpaoschool-my.sharepoint.com/_layouts/15/MySite.aspx?MySiteRedirect=AllDocuments",
-  "icon": "/assets/onedrive.svg",
-  "color": "#201f1e",
-  "background": "#edebe9",
-  "home": true
-},
-{
-  "name": "Atlas Rubicon",
-  "url": "http://ykpaoschool.rubiconatlas.org/Atlas/Authentication/View/Login",
-  "icon": "/assets/atlas-rubicon.png",
-  "color": "#293041",
-  "background": "#eff6fe"
-},
-{
-  "name": "BrainPop",
-  "url": "https://www.brainpop.com/",
-  "icon": "/assets/brainpop.svg",
-  "color": "#ffffff",
-  "background": "#006666"
-},
-{
-  "name": "Calendar",
-  "url": "https://outlook.office.com/owa/?realm=ykpaoschool.cn#path=/calendar/view/month",
-  "icon": "/assets/calendar.svg",
-  "color": "#201f1e",
-  "background": "#edebe9"
-},
-{
-  "name": "Doddle",
-  "url": "https://www.doddlelearn.co.uk/",
-  "icon": "/assets/doddle.svg",
-  "color": "#ff5f11",
-  "background": "#ffffff"
-},
-{
-  "name": "EducationCity",
-  "url": "https://ec3.educationcity.com/",
-  "icon": "/assets/educationcity.svg",
-  "color": "#ffffff",
-  "background": "#0fa9e0"
-},
-{
-  "name": "Encyclopædia Britannica",
-  "url": "https://school.ebonline.com/levels",
-  "icon": "/assets/ebschool.png",
-  "wide_icon": true,
-  "color": "#ffffff",
-  "background": "#084466"
-},
-{
-  "name": "History Today",
-  "url": "https://www.historytoday.com/",
-  "icon": "/assets/history-today.png",
-  "color": "#ffffff",
-  "background": "#000000"
-},
-{
-  "name": "Khan Academy",
-  "url": "https://www.khanacademy.org/",
-  "icon": "/assets/khan-academy.svg",
-  "color": "#ffffff",
-  "background": "#0a2a66"
-},
-{
-  "name": "LibGuides",
-  "url": "https://libguides.ykpaoschool.cn/",
-  "icon": "/assets/ykpao.png",
-  "color": "#ffffff",
-  "background": "#357727"
-},
-{
-  "name": "Naxos Music Library",
-  "url": "https://www.naxosmusiclibrary.com/",
-  "icon": "/assets/naxos-music-library.ico",
-  "color": "#ffffff",
-  "background": "#41a0cf"
-},
-{
-  "name": "Newsela",
-  "url": "https://newsela.com/",
-  "icon": "/assets/newsela.svg",
-  "color": "#1273f8",
-  "background": "#f6f6f6"
-},
-{
-  "name": "NoodleTools",
-  "url": "https://www.noodletools.com/",
-  "icon": "/assets/noodletools.png",
-  "wide_icon": true,
-  "color": "#5b679b",
-  "background": "#f5f4f9"
-},
-{
-  "name": "PowerSource",
-  "url": "https://support.powerschool.com/",
-  "icon": "/assets/powerschool.svg",
-  "color": "#ffffff",
-  "background": "#00427c"
-},
-{
-  "name": "Proquest",
-  "url": "https://search.proquest.com/",
-  "icon": "/assets/proquest.png",
-  "wide_icon": true,
-  "color": "#ffffff",
-  "background": "#0d6469"
-},
-{
-  "name": "Quizlet",
-  "url": "https://quizlet.com/",
-  "icon": "/assets/quizlet.svg",
-  "color": "#ffffff",
-  "background": "#4257b2"
-},
-{
-  "name": "Super Teacher Worksheets",
-  "url": "https://www.superteacherworksheets.com/",
-  "icon": "/assets/super-teacher-worksheets.png",
-  "color": "#ffffff",
-  "background": "#0071b7"
-},
-{
-  "name": "Today's Science",
-  "url": "http://online.infobaselearning.com/",
-  "icon": "/assets/infobase.png",
-  "wide_icon": true,
-  "color": "#363636",
-  "background": "#ffffff"
-},
-{
-  "name": "Turnitin",
-  "url": "https://www.turnitin.com/login_page.asp?lang=en_us",
-  "icon": "/assets/turnitin.png",
-  "color": "#1e7bbb",
-  "background": "#ffffff"
-},
-{
+  },
+  {
+    "name": "Email",
+    "url": "http://mail.ykpaoschool.cn/",
+    "icon": "outlook.svg",
+    "color": "#201f1e",
+    "background": "#edebe9",
+    "home": true
+  },
+  {
+    "name": "ManageBac",
+    "url": "https://ykps.managebac.cn/",
+    "icon": "managebac.svg",
+    "color": "#293041",
+    "background": "#eff6ff",
+    "home": true
+  },
+  {
+    "name": "CHQ",
+    "url": "https://seasia.mychq.net/ykpao",
+    "icon": "chq.svg",
+    "color": "#690d6c",
+    "background": "#ffffff",
+    "home": true
+  },
+  {
+    "name": "OneDrive",
+    "url": "https://ykpaoschool-my.sharepoint.com/_layouts/15/MySite.aspx?MySiteRedirect=AllDocuments",
+    "icon": "onedrive.svg",
+    "color": "#201f1e",
+    "background": "#edebe9",
+    "home": true
+  },
+  {
+    "name": "Atlas Rubicon",
+    "url": "http://ykpaoschool.rubiconatlas.org/Atlas/Authentication/View/Login",
+    "icon": "atlas-rubicon.svg",
+    "color": "#293041",
+    "background": "#eff6fe"
+  },
+  {
+    "name": "BrainPop",
+    "url": "https://www.brainpop.com/",
+    "icon": "brainpop.svg",
+    "color": "#ffffff",
+    "background": "#006666"
+  },
+  {
+    "name": "Calendar",
+    "url": "https://outlook.office.com/owa/?realm=ykpaoschool.cn#path=/calendar/view/month",
+    "icon": "calendar.svg",
+    "color": "#201f1e",
+    "background": "#edebe9"
+  },
+  {
+    "name": "Doddle",
+    "url": "https://www.doddlelearn.co.uk/",
+    "icon": "doddle.svg",
+    "color": "#ff5f11",
+    "background": "#ffffff"
+  },
+  {
+    "name": "EducationCity",
+    "url": "https://ec3.educationcity.com/",
+    "icon": "educationcity.svg",
+    "color": "#ffffff",
+    "background": "#0fa9e0"
+  },
+  {
+    "name": "Encyclopædia Britannica",
+    "url": "https://school.ebonline.com/levels",
+    "icon": "britannica.svg",
+    "wide_icon": true,
+    "color": "#ffffff",
+    "background": "#084466"
+  },
+  {
+    "name": "History Today",
+    "url": "https://www.historytoday.com/",
+    "icon": "history-today.svg",
+    "color": "#ffffff",
+    "background": "#000000"
+  },
+  {
+    "name": "Khan Academy",
+    "url": "https://www.khanacademy.org/",
+    "icon": "khan-academy.svg",
+    "color": "#ffffff",
+    "background": "#0a2a66"
+  },
+  {
+    "name": "LibGuides",
+    "url": "https://libguides.ykpaoschool.cn/",
+    "icon": "ykpao.svg",
+    "color": "#ffffff",
+    "background": "#357727"
+  },
+  {
+    "name": "Today's Science",
+    "url": "http://online.infobaselearning.com/",
+    "icon": "infobase.png",
+    "wide_icon": true,
+    "color": "#363636",
+    "background": "#ffffff"
+  },
+  {
+    "name": "Turnitin",
+    "url": "https://www.turnitin.com/login_page.asp?lang=en_us",
+    "icon": "turnitin.png",
+    "color": "#1e7bbb",
+    "background": "#ffffff"
+  },
+  {
   "name": "Yammer",
   "url": "https://www.yammer.com/ykpaoschool.cn/#/Threads/index?type=algo",
-  "icon": "/assets/yammer.svg",
+  "icon": "yammer.svg",
   "color": "#201f1e",
   "background": "#edebe9"
-}
+  }
 ]

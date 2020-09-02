@@ -9,16 +9,30 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "vue": "^2.6.11"
+    "file-loader": "^6.0.0",
+    "material-icons": "^0.2.3",
+    "vue": "^2.6.11",
+    "vue-router": "^3.4.3",
+    "vue-sticky-directive": "0.0.10",
+    "vuesax": "^3.11.17",
+    "vuetify": "^2.3.9",
+    "webpack": "^4.44.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-router": "^4.5.4",
     "@vue/cli-service": "~4.5.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
-    "vue-template-compiler": "^2.6.11"
+    "js-yaml-loader": "^1.2.2",
+    "sass": "^1.19.0",
+    "sass-loader": "^8.0.0",
+    "vue-cli-plugin-vuesax": "^1.0.0",
+    "vue-cli-plugin-vuetify": "^2.0.7",
+    "vue-template-compiler": "^2.6.11",
+    "vuetify-loader": "^1.6.0"
   },
   "eslintConfig": {
     "root": true,
