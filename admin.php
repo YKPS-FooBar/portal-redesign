@@ -456,5 +456,3 @@ function dir_update_time($dir) {
     </script>
   </body>
 </html>
-
-<!-- TODO: login cookie -->
