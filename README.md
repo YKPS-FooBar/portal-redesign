@@ -1,9 +1,10 @@
 # portal-redesign
 
-## Run
+## Run Local
 ```sh
-php --server localhost:10080 --php-ini php.ini
+php --server localhost:<port> --php-ini php.ini
 ```
+Then visit `http://localhost:<port>` for dashboard or `http://localhost:<port>/login.php` to access admin portal.
 
 ## API
 ### GET `login.php`
