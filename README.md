@@ -54,7 +54,7 @@ filename: <name of file to remove>
 
 200 OK, empty body
 
->> (if bad request)
+>> (else)
 
 400 Bad Request, with error message
 
@@ -85,18 +85,15 @@ attachments[]: <attachment 3.docx>
 > (if logged in)
 
 200 OK, body (in JSON):
+
+>> (if uploaded `bulletin` or `news`)
+
 ```
-{
-    "bulletin": "<upload time>"
-}
+"<upload time (e.g. Oct 8 13:07 or Jan 14 09:29)>"
 ```
-or
-```
-{
-    "news": "<upload time>"
-}
-```
-or
+
+>> (else if uploaded `attachments[]`)
+
 ```
 {
     "attachment 1.pptx": "<upload time>",
@@ -104,7 +101,10 @@ or
     "attachment 3.docx": "<upload time>"
 }
 ```
-Time is in a format like `Oct 8 13:07` or `Jan 14 09:29`.
+
+>> (else)
+
+400 Bad Request, empty body
 
 > (else)
 
