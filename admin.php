@@ -33,6 +33,19 @@ function dir_update_time($dir) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <style>
+      :root {
+        --color-shade: rgba(0, 0, 0, .05);
+        --color-text-main: #24292e;
+        --color-text-muted: #6c757d;
+        --color-text-link: #0366d6;
+        --color-text-error: #dc3545;
+        --border-main: 1px solid #e1e4e8;
+        --shadow-main: 0 5px 20px 0 var(--color-shade);
+        --background-bulletin: linear-gradient(200deg, #5cd477, #00a99d);
+        --background-news: linear-gradient(200deg, #ffa942, #ff5760);
+        --background-attachments: linear-gradient(200deg, #f96cf9, #b977ff);
+      }
+
       * {
         box-sizing: border-box;
       }
@@ -69,9 +82,9 @@ function dir_update_time($dir) {
         width: 100%;
         height: 100%;
         border-radius: 20px;
-        border: 1px solid #e1e4e8;
+        border: var(--border-main);
         overflow: hidden;
-        box-shadow: 0 5px 20px 0 rgba(0, 0, 0, .05);
+        box-shadow: var(--shadow-main);
       }
 
       .upload-area {
@@ -81,7 +94,7 @@ function dir_update_time($dir) {
         align-items: center;
         min-height: 6rem;
         cursor: pointer;
-        background: rgba(0, 0, 0, .05);
+        background: var(--color-shade);
       }
 
       .upload-area .label {
@@ -94,15 +107,15 @@ function dir_update_time($dir) {
       }
 
       #bulletin-upload .upload-area.over, #bulletin-upload .label {
-        background-image: linear-gradient(200deg, #5cd477, #00a99d);
+        background-image: var(--background-bulletin);
       }
 
       #news-upload .upload-area.over, #news-upload .label {
-        background-image: linear-gradient(200deg, #ffa942, #ff5760);
+        background-image: var(--background-news);
       }
 
       #attachments-upload .upload-area.over, #attachments-upload .label {
-        background-image: linear-gradient(200deg, #f96cf9, #b977ff);
+        background-image: var(--background-attachments);
       }
 
       .file-input {
@@ -110,9 +123,8 @@ function dir_update_time($dir) {
       }
 
       .upload-description {
-        /* TODO, think over this */
         text-align: center;
-        color: #6c757d;
+        color: var(--color-text-muted);
         user-select: none;
       }
 
@@ -121,7 +133,7 @@ function dir_update_time($dir) {
       }
 
       .error {
-        color: #dc3545;
+        color: var(--color-text-error);
       }
 
       .upload-area.over .upload-description {
@@ -134,8 +146,11 @@ function dir_update_time($dir) {
       }
 
       .status, .file-list {
-        color: #6c757d;
-        border-top: 1px solid #e1e4e8;
+        color: var(--color-text-muted);
+      }
+
+      .status, .file-list:not(:empty) {
+        border-top: var(--border-main);
       }
 
       .file-list {
@@ -143,7 +158,7 @@ function dir_update_time($dir) {
       }
 
       .file-view {
-        color: #0366d6;
+        color: var(--color-text-link);
         text-decoration: none;
       }
 
@@ -158,16 +173,16 @@ function dir_update_time($dir) {
       }
 
       .file:not(:last-child) {
-        border-bottom: 1px solid #e1e4e8;
+        border-bottom: var(--border-main);
       }
 
       .filename {
         flex: auto;
-        margin-right: 0.5rem;
+        margin-right: .5rem;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        color: #24292e;
+        color: var(--color-text-main);
       }
 
       .filename a {
@@ -180,18 +195,18 @@ function dir_update_time($dir) {
       }
 
       .file-update-time {
-        margin-right: 0.5rem;
+        margin-right: .5rem;
         white-space: nowrap;
       }
 
       .file-remove {
         cursor: pointer;
         user-select: none;
-        color: #24292e;
+        color: var(--color-text-main);
       }
 
       .file-remove:hover {
-        color: #0366d6;
+        color: var(--color-text-link);
       }
     </style>
   </head>
