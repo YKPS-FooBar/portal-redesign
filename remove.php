@@ -2,7 +2,7 @@
 
 session_start();
 if (!isset($_SESSION['logged'])) {
-  header('Location: /login.php');
+  http_response_code(401);
   exit;
 }
 

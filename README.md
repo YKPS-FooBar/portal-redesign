@@ -20,24 +20,24 @@ password: <password>
 
 **Returns**:
 
-> (if correct)
+> if correct
 
-302 redirect to `/admin.php`
+**302** Redirect to `/admin.php`
 
-> (else)
+> else
 
-Login page
+**401** Login page
 
 ### GET `admin.php`
 **Returns**:
 
-> (if logged in)
+> if logged in
 
-Admin portal page
+**200** Admin portal page
 
-> (else)
+> else
 
-302 redirect to `/login.php`
+**302** Redirect to `/login.php`
 
 ### POST `remove.php`
 **Form**:
@@ -49,18 +49,18 @@ filename: <name of file to remove>
 
 **Returns**:
 
-> (if logged in)
->> (if good request)
+> if logged in
+>> if good request
 
-200 OK, empty body
+**200**
 
->> (else)
+>> else
 
-400 Bad Request, with error message
+**400** Error message
 
-> (else)
+> else
 
-302 redirect to `/login.php`
+**302** Redirect to `/login.php`
 
 ### POST `upload.php`
 **Form**:
@@ -82,17 +82,17 @@ attachments[]: <attachment 3.docx>
 
 **Returns**:
 
-> (if logged in)
+> if logged in
 
-200 OK, body (in JSON):
+**200** Upload times (in JSON):
 
->> (if uploaded `bulletin` or `news`)
+>> if uploaded `bulletin` or `news`
 
 ```
 "<upload time (e.g. Oct 8 13:07 or Jan 14 09:29)>"
 ```
 
->> (else if uploaded `attachments[]`)
+>> else if uploaded `attachments[]`
 
 ```
 {
@@ -102,10 +102,10 @@ attachments[]: <attachment 3.docx>
 }
 ```
 
->> (else)
+>> else
 
-400 Bad Request, empty body
+**400**
 
-> (else)
+> else
 
-302 redirect to `/login.php`
+**302** Redirect to `/login.php`

@@ -14,6 +14,10 @@ if ($found) {
   exit;
 }
 
+if ($attempt) {
+  http_response_code(401);
+}
+
 ?>
 
 <!DOCTYPE html>
