@@ -58,6 +58,7 @@ function dir_update_time($dir) {
         font-family: Helvetica Now Display, Helvetica, sans-serif;
         margin: 0;
         line-height: 1.5;
+        color: var(--color-text-main);
       }
 
       .heading {
@@ -141,16 +142,19 @@ function dir_update_time($dir) {
       }
 
       .status {
-        padding: 1rem;
         text-align: center;
-      }
-
-      .status, .file-list {
-        color: var(--color-text-muted);
       }
 
       .status, .file-list:not(:empty) {
         border-top: var(--border-main);
+      }
+
+      .status, .file {
+        padding: 1rem;
+      }
+
+      .status, .file-update-time {
+        color: var(--color-text-muted);
       }
 
       .file-list {
@@ -168,8 +172,6 @@ function dir_update_time($dir) {
 
       .file {
         display: flex;
-        padding: 1rem;
-        margin-bottom: -1px;
       }
 
       .file:not(:last-child) {
@@ -182,7 +184,6 @@ function dir_update_time($dir) {
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        color: var(--color-text-main);
       }
 
       .filename a {
@@ -202,7 +203,6 @@ function dir_update_time($dir) {
       .file-remove {
         cursor: pointer;
         user-select: none;
-        color: var(--color-text-main);
       }
 
       .file-remove:hover {

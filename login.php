@@ -27,6 +27,19 @@ if ($attempt) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <style>
+      :root {
+        --color-shade: rgba(0, 0, 0, .05);
+        --color-text-main: #24292e;
+        --color-text-muted: #6c757d;
+        --color-text-link: #0366d6;
+        --color-text-error: #dc3545;
+        --border-main: 1px solid #e1e4e8;
+        --shadow-main: 0 5px 20px 0 var(--color-shade);
+        --background-bulletin: linear-gradient(200deg, #5cd477, #00a99d);
+        --background-news: linear-gradient(200deg, #ffa942, #ff5760);
+        --background-attachments: linear-gradient(200deg, #f96cf9, #b977ff);
+      }
+
       * {
         box-sizing: border-box;
       }
@@ -39,6 +52,7 @@ if ($attempt) {
         font-family: Helvetica Now Display, Helvetica, sans-serif;
         margin: 0;
         line-height: 1.5;
+        color: var(--color-text-main);
       }
 
       .login {
