@@ -2,6 +2,7 @@
 
 ini_set('memory_limit', '256M');
 ini_set('post_max_size', '512M');
+ini_set('file_uploads', 'On');
 ini_set('upload_max_filesize', '512M');
 ini_set('max_file_uploads', '100');
 
