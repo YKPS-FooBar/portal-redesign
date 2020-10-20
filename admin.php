@@ -440,7 +440,7 @@ redirect_login();
 
           if (DataTransferItem.prototype.webkitGetAsEntry) {
             [...e.dataTransfer.items].forEach(item => eachFile(item.webkitGetAsEntry(), file => {
-              upload(target.name, [file])
+              upload(target.name, [file]);
             }));
           } else {
             upload(target.name, e.dataTransfer.files);
