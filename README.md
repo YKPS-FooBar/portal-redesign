@@ -1,10 +1,6 @@
 # portal-redesign
 
-## Run Local
-```sh
-php --server localhost:<port>
-```
-Then visit `http://localhost:<port>` for dashboard or `http://localhost:<port>/login.php` to access admin portal.
+## Preparation
 
 Make sure you have set at least
 ```
@@ -15,6 +11,22 @@ upload_max_filesize = 512M
 max_file_uploads = 100
 ```
 in `php.ini` to allow large uploads.
+
+Also, make sure the request body size setting for your proxy (Apache, nginx, etc.) is large enough (at least 512M). For example,
+```
+client_max_body_size 512M;
+```
+in nginx `.conf`.
+
+The choice of 512M was arbitrary, but it has to be consistent.
+
+Additionally, make sure that PHP has access to sessions, which are needed for login.
+
+## Run Local
+```sh
+php --server localhost:<port>
+```
+Then visit `http://localhost:<port>` for dashboard or `http://localhost:<port>/login.php` to access admin portal.
 
 ## API
 ### GET `login.php`
