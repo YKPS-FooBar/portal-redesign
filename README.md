@@ -6,10 +6,11 @@ php --server localhost:<port>
 ```
 Then visit `http://localhost:<port>` for dashboard or `http://localhost:<port>/login.php` to access admin portal.
 
-Make sure you have set
+Make sure you have set at least
 ```
 memory_limit = 512M
 post_max_size = 512M
+file_uploads = On
 upload_max_filesize = 512M
 max_file_uploads = 100
 ```
