@@ -32,10 +32,12 @@ function dir_update_time($dir) {
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="icon" href="/favicon.ico">
+    <title>Admin | YKPS Portal</title>
     <style>
       :root {
         --color-shade: rgba(0, 0, 0, .05);
-        --color-text-main: #24292e;
+        --color-text-main: #2c3e50;
         --color-text-muted: #6c757d;
         --color-text-link: #0366d6;
         --color-text-error: #dc3545;
@@ -314,14 +316,13 @@ function dir_update_time($dir) {
 
       const upload = (name, files) => {
         const formData = new FormData();
-        const updateText = document.querySelector(`.update-time[for="${name}"]`);
         const errorText = document.querySelector(`.error[for="${name}"]`);
         const single = typeof fileUpdateTimes[name] === 'string';
 
         errorText.innerText = '';
 
-        // Single files must be PDF
         if (single) {
+          // Single files must be PDF
           files = [...files].filter(file => file.type === 'application/pdf');
           if (files.length === 0) {
             return errorText.innerText = 'Please select a PDF document';
@@ -329,7 +330,11 @@ function dir_update_time($dir) {
           if (files[0].size > 512 * 1024 * 1024) {
             return errorText.innerText = 'File too large (>512M)';
           }
+
           formData.append(name, files[0]);
+
+          const updateText = document.querySelector(`.update-time[for="${name}"]`);
+          updateText.innerText = 'Uploading…';
         } else {
           if (files.length === 0) {
             return errorText.innerText = 'No files selected';
@@ -339,6 +344,7 @@ function dir_update_time($dir) {
           if ([...files].map(file => file.size).reduce((x, y) => x + y) > 512 * 1024 * 1024) {
             return errorText.innerText = 'Files too large (>512M)';
           }
+
           [...files].forEach(file => formData.append(name, file));
         }
 
