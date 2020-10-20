@@ -1,14 +1,8 @@
 <?php
 
-session_start();
-if (!isset($_SESSION['logged'])) {
-  http_response_code(401);
-  exit;
-}
+include('config.php');
 
-function update_time($file) {
-  return date('M j H:i', filemtime($file));
-}
+must_login();
 
 if (isset($_FILES['bulletin'])) {
   $tmp_name = $_FILES['bulletin']['tmp_name'];

@@ -1,28 +1,8 @@
 <?php
 
-session_start();
-if (!isset($_SESSION['logged'])) {
-  header('Location: /login.php');
-  exit;
-}
+include('config.php');
 
-function update_time($file) {
-  if (is_file($file)) {
-    return date('M j H:i', filemtime($file));
-  } else {
-    return 'None';
-  }
-}
-
-function dir_update_time($dir) {
-  // scandir sorts alphabetically by default
-  $filenames = array_diff(scandir($dir), array('.', '..'));
-  $update_times = array();
-  foreach ($filenames as $filename) {
-    $update_times[$filename] = update_time($dir . '/' . $filename);
-  }
-  return $update_times;
-}
+redirect_login();
 
 ?>
 

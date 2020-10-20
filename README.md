@@ -2,9 +2,18 @@
 
 ## Run Local
 ```sh
-php --server localhost:<port> --php-ini php.ini
+php --server localhost:<port>
 ```
 Then visit `http://localhost:<port>` for dashboard or `http://localhost:<port>/login.php` to access admin portal.
+
+Make sure you have set
+```
+memory_limit = 512M
+post_max_size = 512M
+upload_max_filesize = 512M
+max_file_uploads = 100
+```
+in `php.ini` to allow large uploads.
 
 ## API
 ### GET `login.php`

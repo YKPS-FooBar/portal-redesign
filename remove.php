@@ -1,10 +1,8 @@
 <?php
 
-session_start();
-if (!isset($_SESSION['logged'])) {
-  http_response_code(401);
-  exit;
-}
+include('config.php');
+
+must_login();
 
 $file_lists = array('attachments');
 
