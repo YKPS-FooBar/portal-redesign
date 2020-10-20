@@ -61,6 +61,30 @@ password: <password>
 
 **302** Redirect to `/login.php`
 
+### POST `files.php`
+**Form**:
+
+```
+name: "attachments[]"
+```
+
+**Returns**:
+
+> if good request
+
+**200**
+```
+{
+    "attachment 1.pptx": "<upload time e.g. Oct 8 13:07 or Jan 14 09:29>",
+    "attachment 2.pdf": "<upload time>",
+    "attachment 3.docx": "<upload time>"
+}
+```
+
+> else
+
+**400** Error message
+
 ### POST `remove.php`
 **Form**:
 
@@ -82,7 +106,7 @@ filename: <name of file to remove>
 
 > else
 
-**302** Redirect to `/login.php`
+**401**
 
 ### POST `upload.php`
 **Form**:
@@ -130,4 +154,4 @@ attachments[]: <attachment 3.docx>
 
 > else
 
-**302** Redirect to `/login.php`
+**401**
