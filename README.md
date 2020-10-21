@@ -18,36 +18,52 @@ in your `php.ini` to allow large uploads.
 
 ### Server Config
 
-#### Example Apache
+#### Example Apache Virtual Hosts
 ```apache
-# Modules for PHP and `mod_rewrite` are required:
-LoadModule rewrite_module [your mod_rewrite.so location]
-LoadModule php5_module [your libphp5.so location]  # (php7 also works)
+Listen 80
+Listen 443
 
-# Set `DocumentRoot` to where this repo is at, e.g.:
-DocumentRoot "/home/thomas/portal-redesign"
-<Directory "/home/thomas/portal-redesign">
-    Require all granted
-</Directory>
+<VirtualHost *:80>
+   ServerName go.myykps.cn
+   Redirect / https://go.myykps.cn
+</VirtualHost>
 
-# Handle .php files using PHP handler
-<FilesMatch \.php$>
-    SetHandler application/x-httpd-php
-</FilesMatch>
+<VirtualHost *:443>
+    ServerName go.myykps.cn
 
-# The Vue router is in history mode, so views are named as separate pages like `/clubs`
-# which don't take up files, so those should be taken to `/index.html` and handled there
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-    RewriteBase /
-    RewriteRule ^index\.html$ - [L]
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule . /index.html [L]
-</IfModule>
+    # SSL settings; change to your certificate and key location
+    SSLEngine On
+    SSLCertificateFile "/path/to/go.myykps.cn.cert"
+    SSLCertificateKeyFile "/path/to/go.myykps.cn.key"
+    SSLCipherSuite HIGH:!aNULL:!MD5
+
+    # Modules for PHP and `mod_rewrite` are required:
+    LoadModule rewrite_module [your mod_rewrite.so location like modules/mod_rewrite.so]
+    LoadModule php5_module [your libphp5.so location]  # or php7
+
+    # Set `DocumentRoot` to where this repo is at, e.g.:
+    DocumentRoot [path to portal-redesign]
+    <Directory [path to portal-redesign]>
+        Require all granted
+
+        # The Vue router is in history mode, so views are named as separate pages like `/clubs`
+        # which don't take up files, so those should be taken to `/index.html` and handled there
+        <IfModule mod_rewrite.c>
+            RewriteEngine On
+            RewriteBase /
+            RewriteRule ^index\.html$ - [L]
+            RewriteCond %{REQUEST_FILENAME} !-f
+            RewriteCond %{REQUEST_FILENAME} !-d
+            RewriteRule . /index.html [L]
+        </IfModule>
+    </Directory>
+
+    # Handle .php files using PHP handler
+    <FilesMatch \.php$>
+        SetHandler application/x-httpd-php
+    </FilesMatch>
+</VirtualHost>
 ```
-
-Other configs are handled by `.htaccess`.
 
 #### Example nginx with PHP-FPM
 ```nginx
@@ -70,7 +86,7 @@ server {
     server_name  go.myykps.cn;
 
     # Where you place this repo
-    root /home/thomas/portal-redesign;
+    root [path to portal-redesign];
 
     # SSL settings; change to your certificate and key location
     ssl_certificate /etc/pki/nginx/server.crt;
@@ -80,8 +96,7 @@ server {
     ssl_ciphers HIGH:!aNULL:!MD5;
     ssl_prefer_server_ciphers on;
 
-    # Make sure the request body size is large enough (at least 512M)
-    # The choice of 512M was arbitrary
+    # Make sure the request body size is large enough (at least 512M). The choice of 512M was arbitrary
     # but it has to stay consistent throughout the server config, backend settings, and frontend JS.
     client_max_body_size 512M;
 
@@ -99,14 +114,21 @@ server {
         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
         include fastcgi_params;
     }
+
+    # Ignore .htaccess
+    location ~ /\.ht {
+        deny all;
+    }
 }
 ```
 
-Additionally, make sure that nginx or Apache has access to the PHP session save path, which are needed for login. For example:
+Additionally, make sure that nginx or Apache has access to the PHP session save path, which is needed for login. Also make sure they have access to the repo directory. For example:
 ```sh
-sudo chown -R nginx:nginx /var/lib/php/session/
+# Assuming PHP session save path is `/var/lib/php/session/`
+sudo chmod -R a+rw /var/lib/php/session/
+sudo chmod -R a+rw [path to portal-redesign]
 ```
-assuming PHP session save path is `/var/lib/php/session/`. Sessions are needed by YKPS Portal for admin login.
+Sessions are needed by YKPS Portal for admin login.
 
 Also, make sure they have read access to this repo directory.
 
