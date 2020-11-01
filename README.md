@@ -128,9 +128,6 @@ Additionally, make sure that nginx or Apache has access to the PHP session save 
 sudo chmod -R a+rw /var/lib/php/session/
 sudo chmod -R a+rw [path to portal-redesign]
 ```
-Sessions are needed by YKPS Portal for admin login.
-
-Also, make sure they have read access to this repo directory.
 
 ## Run Local
 ```sh
