@@ -1,52 +1,62 @@
 <template>
-  <div>
-    <vs-navbar v-model="activeItem" class="navbar-wrapper">
-      <a href="/" slot="title" class="nav-item-wrapper" style="display: flex !important; justify-items: center !important; align-items: center !important;">
+  <div class="center examplex">
+    <vs-navbar target-scroll="#padding-scroll-content" padding-scroll center-collapsed v-model="active">
+      <template #left>
         <vs-navbar-title class="nav-logo">
-          <img src="../../public/images/icons/ykpao.svg" style="width: 25%;">
+          <img src="../../public/images/icons/ykpao.svg" class="logo">
         </vs-navbar-title>
-        <vs-navbar-item style="margin-top: -1pt !important; color: #5cb531 !important;">
+        <vs-navbar-item class="nav-title" style="color: #5cb531 !important; font-size: 14pt;">
           YK Pao School Portal
+<!--          <span style="color: #aaa; font-weight: 400">Alpha Demo</span>-->
         </vs-navbar-item>
-      </a>
-      <vs-navbar-item class="static" v-bind:class="{ active: activeItem }">
-        <router-link to="/clubs" class="nav-item">Clubs</router-link>
-      </vs-navbar-item>
-      <vs-navbar-item class="static" v-bind:class="{ active: activeItem }">
-        <router-link to="/links" class="nav-item">Links</router-link>
-      </vs-navbar-item>
-      <vs-button class="vs-button-primary">
-        <router-link to="/" class="vs-button-primary-label">Dashboard</router-link>
-      </vs-button>
+      </template>
+      <template #right>
+        <router-link to="/" class="nav-item">
+          <vs-navbar-item :active="active == 'dashboard'" id="dashboard" @click="activate(dashboard)">
+            Dashboard
+          </vs-navbar-item>
+        </router-link>
+        <router-link to="/clubs" class="nav-item">
+          <vs-navbar-item :active="active == 'clubs'" id="clubs" @click="activate(clubs)">
+            Clubs
+          </vs-navbar-item>
+        </router-link>
+        <router-link to="/links" class="nav-item">
+          <vs-navbar-item :active="active == 'links'" id="links">
+            Links
+          </vs-navbar-item>
+        </router-link>
+<!--        <p style="margin-right: 1em; color: #aaa;">Dark Mode</p>-->
+<!--        <vs-switch v-model="active2">-->
+<!--          <template #circle>-->
+<!--            <i v-if="!active2" class='bx bxs-moon' ></i>-->
+<!--            <i v-else class='bx bxs-sun' ></i>-->
+<!--          </template>-->
+<!--        </vs-switch>-->
+      </template>
     </vs-navbar>
   </div>
 </template>
 <script>
 export default {
-  data: () => ({
-    activeItem: 0,
+  data:() => ({
+    active: id
   })
 }
 </script>
+
 <style scoped>
-.active {
-  color: #5cb531;
+.logo {
+  margin-left: 2em;
+  max-width: 5em;
+  height: 2em;
+  margin-top: 2pt !important;
 }
-
-.navbar-wrapper {
-  padding: 0 15em;
-  color: #5cb531;
-}
-
-.nav-item-wrapper {
-  padding: .75em .25em !important;
-  color: #5cb531;
-  margin-left: -2.5em !important;
-}
-
 .nav-item {
   font-size: 12pt !important;
   font-weight: 400 !important;
+  text-decoration: none !important;
+  color: black;
 }
 
 .vs-button-primary {
@@ -55,10 +65,11 @@ export default {
 
 .vs-button-primary-label {
   font-size: 12pt !important;
+  text-decoration: none !important;
   color: #fff;
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1080px) {
   .navbar-wrapper {
     padding: 1.5em 5em;
     display: flex;
@@ -78,6 +89,9 @@ export default {
 }
 
 @media screen and (max-width: 800px) {
+  .logo {
+    margin-left: 0.5em;
+  }
   .navbar-wrapper {
     padding: 1.5em 0.5em;
     display: flex;
@@ -93,6 +107,19 @@ export default {
     margin-top: 1.5em !important;
     margin-bottom: 2em !important;
     margin-left: .5em !important;
+  }
+}
+@media screen and (max-width: 640px) {
+  .nav-title {
+    display: none;
+  }
+}
+@media screen and (max-width: 400px) {
+  .logo {
+    //display: none;
+  }
+  .nav-title {
+    display: none;
   }
 }
 </style>

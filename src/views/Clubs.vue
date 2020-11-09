@@ -1,46 +1,35 @@
 <template>
-  <div class="d-flex links justify-content-center">
+  <div class="d-flex clubs">
     <div class="heading-wrapper">
       <h1>Clubs</h1>
     </div>
-    <div class="content-wrapper">
+    <div class="content-wrapper justify-content-center">
       <vs-row vs-justify="center" vs-align="center" class="d-flex card-wrapper">
+<!--        <vs-card class="link-card" v-for="item in Clubs" v-bind:key="item.index">-->
+<!--          <a @click="openConfirm()" style="color: #000" v-bind:index="item.index">-->
+<!--            <div slot="media" class="d-flex link-icon-wrapper justify-items-center">-->
+<!--              <img v-if="item.icon" :src="require(`../../public/images/icons/${item.icon}`)" class="link-icon"/>-->
+<!--            </div>-->
+<!--            <div>-->
+<!--              <div id="link-label">-->
+<!--                {{ item.name }}-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </a>-->
+<!--        </vs-card>-->
         <vs-card class="link-card" v-for="item in Clubs" v-bind:key="item.index">
-          <a @click="openConfirm()" style="color: #000" v-bind:index="item.index">
-            <div slot="media" class="d-flex link-icon-wrapper justify-items-center">
-              <img v-if="item.icon" :src="require(`../../public/images/icons/${item.icon}`)" class="link-icon"/>
-            </div>
-            <div>
-              <div id="link-label">
-                {{ item.name }}
-              </div>
-            </div>
-          </a>
+          <template #title>
+            <h3>{{ item.name }}</h3>
+          </template>
+          <template class="link-avatar" #img >
+            <img v-if="item.icon" :src="require(`../../public/images/icons/${item.icon}`)" class="link-icon"/>
+          </template>
+          <template #text>
+            <p>
+              {{ item.desc }}
+            </p>
+          </template>
         </vs-card>
-<!--        <v-dialog v-model="dialog" max-width="290pt">-->
-<!--          <v-card>-->
-<!--            <v-card-title class="headline grey lighten-2" v-for="item in Clubs" :key="item.index">-->
-<!--              {{ item.name }}-->
-<!--            </v-card-title>-->
-
-<!--            <v-card-text>-->
-<!--              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.-->
-<!--            </v-card-text>-->
-
-<!--            <v-divider></v-divider>-->
-
-<!--            <v-card-actions>-->
-<!--              <v-spacer></v-spacer>-->
-<!--              <v-btn-->
-<!--                  color="primary"-->
-<!--                  text-->
-<!--                  @click="dialog = false"-->
-<!--              >-->
-<!--                Close-->
-<!--              </v-btn>-->
-<!--            </v-card-actions>-->
-<!--          </v-card>-->
-<!--        </v-dialog>-->
       </vs-row>
     </div>
   </div>
@@ -88,8 +77,41 @@ export default {
 </script>
 
 <style scoped>
+h1 {
+  margin-top: 5em !important;
+}
+vs-card {
+  text-decoration: none !important;
+}
+vs-card:hover {
+  box-shadow: rgba(0,0,0,0.25) 0 5px 30px 0 !important;
+}
 .heading-wrapper {
+  text-align: left !important;
   margin-top: 5em;
+  margin-left: 15em;
+}
+.subheading-wrapper {
+  text-align: left !important;
+  margin-top: 1em;
+  margin-bottom: 1.5em;
+}
+.footer-wrapper {
+  margin-bottom: 3em;
+}
+.footer {
+  color: #aaa;
+  font-size: 12pt;
+  font-weight: 400;
+  line-height: 20pt;
+}
+.footer-link {
+  color: #aaa;
+  transition: ease-in-out 200ms;
+}
+.footer-link:hover {
+  color: #444;
+  transition: ease-in-out 200ms;
 }
 .content-wrapper {
   width: calc(100% - 30em);
@@ -99,28 +121,100 @@ export default {
   width: calc(25% - 2em);
   height: 15em !important;
   transition: 200ms ease-in;
+  margin-bottom: 2em;
 }
-.link-card:hover {
-  box-shadow: 0 6px 40px 0 rgba(0,0,0,.1);
-  transform: scale(1.025,1.025);
-  transition: 200ms ease-out;
+.link-card:not(:nth-child(4n)) {
+  margin-right: 2em;
 }
 .link-icon-wrapper {
   height: 15em;
 }
+.link-card-wide {
+  min-width: calc(37.5% - 2em) !important;
+  height: 15em !important;
+  transition: 200ms ease-in;
+  margin-bottom: 2em;
+}
 .link-icon {
   justify-self: center !important;
-  padding: 2em 0;
-  max-height: 15em;
+  justify-items: center !important;
+  justify-content: center !important;
+  margin: 3em 0;
+  min-height: 5em;
+  min-width: 10em;
+  border-radius: 0;
 }
-
-@media screen and (min-width: 1280px) {
-  .link-card:not(:nth-child(4n)) {
-    margin-right: 2em;
-  }
+.link-icon-large {
+  max-height: 12em !important;
+  max-width: 10em !important;
+  border-radius: 0  ;
+}
+#link-label {
+  text-decoration: none !important;
+}
+.vs-dialog__content .vs-dialog--scroll {
+  max-height: 100%;
+}
+.con-content {
+  max-height: 100vh;
+}
+.embed-responsive-item {
+  border-radius: 10pt;
+  border: none;
+  width: 100%;
 }
 
 @media screen and (max-width: 1280px) {
+  .heading-wrapper {
+    text-align: left !important;
+    margin-top: 5em;
+    margin-left: 5em;
+  }
+  .content-wrapper {
+    width: calc(100% - 10em);
+    margin: 2em 5em !important;
+  }
+  .link-card {
+    width: calc(25% - 2em);
+    margin-bottom: 2em;
+  }
+  .link-card:not(:nth-child(4n)) {
+    margin-right: 2em;
+  }
+  .link-icon {
+    justify-self: center !important;
+    padding: 0 1em;
+    height: 6em;
+    max-width: 8em;
+  }
+}
+@media screen and (min-width: 1080px) {
+  .link-icon {
+    max-height: 12em !important;
+    max-width: 5em !important;
+  }
+  .link-icon-large {
+    max-height: 12em !important;
+    max-width: 10em !important;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .heading-wrapper {
+    text-align: left !important;
+    margin-top: 5em;
+    margin-left: 5em;
+  }
+  .subheading-wrapper {
+    text-align: left !important;
+    margin-top: 2em;
+    margin-bottom: 1em;
+  }
+  .footer {
+    color: #aaa !important;
+    font-size: 14pt;
+    font-weight: 400;
+  }
   .content-wrapper {
     width: calc(100% - 10em);
     margin: 2em 5em !important;
@@ -132,14 +226,69 @@ export default {
   .link-card:not(:nth-child(2n)) {
     margin-right: 2em;
   }
+  .link-icon {
+    justify-self: center !important;
+    padding: 0 1em;
+    height: 6em;
+    max-width: 8em;
+  }
+  .dialog-content {
+    width: 90vw;
+  }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 640px) {
+  .content-wrapper {
+    width: calc(100% - 2em);
+    margin: 2em 2em !important;
+  }
   .heading-wrapper {
-    margin-top: 3em;
+    text-align: left !important;
+    margin-top: 5em;
+    margin-left: 2em;
+  }
+  .link-icon {
+    max-height: 12em !important;
+    max-width: 5em !important;
+  }
+  .link-icon-large {
+    max-height: 12em !important;
+    max-width: 8em !important;
+  }
+}
+@media screen and (max-width: 400px) {
+  .heading-wrapper {
+    margin-top: 7em !important;
+    margin-left: 1.5em;
   }
   .content-wrapper {
     width: calc(100% - 1em);
-    margin: 2em 0.5em !important;
+    margin: 2em 1.5em !important;
+  }
+  .link-card {
+    width: calc(100%);
+    margin-bottom: 7em;
+  }
+  .link-card:not(:nth-child(1n)) {
+    margin-right: 0;
+  }
+  .link-icon {
+    max-height: 5em !important;
+    max-width: 8em !important;
+  }
+  .link-icon-large {
+    max-height: 12em !important;
+    max-width: 12em !important;
+  }
+  .footer {
+    color: #aaa !important;
+    font-size: 12pt;
+    font-weight: 400;
+  }
+}
+@media screen and (min-width: 400px) {
+  .link-card:not(:nth-child(n)) {
+    margin-right: 0;
+    margin-left: 0;
   }
 }
 </style>

@@ -4,26 +4,14 @@
     "name": "WeeStudios",
     "url": "http://weestudios.org",
     "icon": "clubs/weestudios.svg",
-    "desc": "Lorem ipsum dolor sit amet."
+    "desc": "We are WeeStudios, YK Pao School's student design laboratory, established in 2014 as a student run studio specialising in graphic design and multimedia work at the secondary division."
   },
   {
     "index": 2,
-    "name": "Foo Bar",
+    "name": "FooBar",
     "url": "https://github.com/orgs/YKPS-FooBar",
-    "icon": "",
-    "desc": "Lorem ipsum dolor sit amet."
-  },
-  {
-    "index": 3,
-    "name": "",
-    "url": "#",
-    "icon": ""
-  },
-  {
-    "index": 4,
-    "name": "",
-    "url": "#",
-    "icon": ""
+    "icon": "clubs/foo-bar.jpg",
+    "desc": "FooBar, first established in 2017, is YK Pao School's student-led programming club."
   }
 
 ]

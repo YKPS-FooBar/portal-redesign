@@ -17,15 +17,15 @@
     "home": true
   },
   {
-  "name": "PowerSchool Learning",
+  "name": "PS Learning",
   "url": "https://ykpaoschool.learning.powerschool.com/",
-  "icon": "powerschool.svg",
+  "icon": "Power_School.svg",
   "color": "#ffffff",
   "background": "#00427c",
   "home": true
   },
   {
-    "name": "Email",
+    "name": "Mail",
     "url": "http://mail.ykpaoschool.cn/",
     "icon": "outlook.svg",
     "color": "#201f1e",
@@ -72,7 +72,7 @@
   },
   {
     "name": "Calendar",
-    "url": "https://outlook.office.com/owa/?realm=ykpaoschool.cn#path=/calendar/view/month",
+    "url": "https://outlook.office.com/calendar/view/month",
     "icon": "calendar.svg",
     "color": "#201f1e",
     "background": "#edebe9"
@@ -92,7 +92,7 @@
     "background": "#0fa9e0"
   },
   {
-    "name": "Encyclopædia Britannica",
+    "name": "Britannica Online",
     "url": "https://school.ebonline.com/levels",
     "icon": "britannica.svg",
     "wide_icon": true,
@@ -123,7 +123,7 @@
   {
     "name": "Today's Science",
     "url": "http://online.infobaselearning.com/",
-    "icon": "infobase.png",
+    "icon": "infobase.svg",
     "wide_icon": true,
     "color": "#363636",
     "background": "#ffffff"
@@ -131,7 +131,7 @@
   {
     "name": "Turnitin",
     "url": "https://www.turnitin.com/login_page.asp?lang=en_us",
-    "icon": "turnitin.png",
+    "icon": "tiiIcon.svg",
     "color": "#1e7bbb",
     "background": "#ffffff"
   },
