@@ -1,5 +1,5 @@
 <template>
-  <div class="center examplex">
+  <div class="center">
     <vs-navbar target-scroll="#padding-scroll-content" padding-scroll center-collapsed v-model="active">
       <template #left>
         <vs-navbar-title class="nav-logo">
@@ -7,23 +7,12 @@
         </vs-navbar-title>
         <vs-navbar-item class="nav-title" style="color: #5cb531 !important; font-size: 14pt;">
           YK Pao School Portal
-<!--          <span style="color: #aaa; font-weight: 400">Alpha Demo</span>-->
         </vs-navbar-item>
       </template>
       <template #right>
-        <router-link to="/" class="nav-item">
-          <vs-navbar-item :active="active == 'dashboard'" id="dashboard" @click="activate(dashboard)">
-            Dashboard
-          </vs-navbar-item>
-        </router-link>
-        <router-link to="/clubs" class="nav-item">
-          <vs-navbar-item :active="active == 'clubs'" id="clubs" @click="activate(clubs)">
-            Clubs
-          </vs-navbar-item>
-        </router-link>
-        <router-link to="/links" class="nav-item">
-          <vs-navbar-item :active="active == 'links'" id="links">
-            Links
+        <router-link class="nav-item" v-for="link in links" :key="link.id" :to="link.link">
+          <vs-navbar-item :active="active == link.id" @click="active = link.id">
+            {{ link.title }}
           </vs-navbar-item>
         </router-link>
 <!--        <p style="margin-right: 1em; color: #aaa;">Dark Mode</p>-->
@@ -39,9 +28,28 @@
 </template>
 <script>
 export default {
-  data:() => ({
-    active: id
-  })
+  data() {
+    return {
+      active: 0,
+      links: [
+        {
+          id: 0,
+          title: 'Dashboard',
+          link: '/'
+        },
+        {
+          id: 1,
+          title: 'Clubs',
+          link: '/clubs'
+        },
+        {
+          id: 2,
+          title: 'Links',
+          link: '/links'
+        }
+      ]
+    };
+  }
 }
 </script>
 
@@ -52,6 +60,7 @@ export default {
   height: 2em;
   margin-top: 2pt !important;
 }
+
 .nav-item {
   font-size: 12pt !important;
   font-weight: 400 !important;
@@ -109,15 +118,8 @@ export default {
     margin-left: .5em !important;
   }
 }
+
 @media screen and (max-width: 640px) {
-  .nav-title {
-    display: none;
-  }
-}
-@media screen and (max-width: 400px) {
-  .logo {
-    //display: none;
-  }
   .nav-title {
     display: none;
   }
