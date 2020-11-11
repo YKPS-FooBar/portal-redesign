@@ -169,7 +169,7 @@
     </div>
     <div class="footer-wrapper">
       <span class="footer">Designed by <a class="footer-link" href="https://tigerfeng.cn">Tiger Feng</a>
-        <span style="opacity: 0">--</span>|<span style="opacity: 0">--</span>Developed by <a class="footer-link" href="https://github.com/orgs/YKPS-FooBar/">FooBar</a>
+        <span style="opacity: 0">--</span>|<span style="opacity: 0">--</span>Developed by <a class="footer-link" href="https://github.com/orgs/YKPS-FooBar/">The Foo Bar</a>
       </span>
     </div>
   </div>

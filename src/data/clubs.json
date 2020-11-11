@@ -8,10 +8,9 @@
   },
   {
     "index": 2,
-    "name": "FooBar",
+    "name": "The Foo Bar",
     "url": "https://github.com/orgs/YKPS-FooBar",
     "icon": "clubs/foo-bar.jpg",
-    "desc": "FooBar, first established in 2017, is YK Pao School's student-led programming club."
+    "desc": "The Foo Bar, first established in 2017, is YK Pao School's student-led programming club."
   }
-
 ]
