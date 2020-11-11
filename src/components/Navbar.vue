@@ -1,22 +1,12 @@
 <template>
   <div class="nav">
-    <!-- <vs-navbar-title class="nav-logo"> -->
-      <!-- <img src="../../public/images/icons/ykpao.svg" class="logo"> -->
-    <!-- </vs-navbar-title> -->
     <router-link to="/">
       <img src="../../public/images/icons/ykpao.svg" class="logo">
     </router-link>
     <router-link to="/" class="nav-title">
       YK Pao School Portal
     </router-link>
-
-    <!-- <router-link class="nav-item" v-for="link in links" :key="link.id" :to="link.link">
-      <vs-navbar-item :active="active == link.id" id="link.id">
-        {{ link.name }}
-      </vs-navbar-item>
-    </router-link> -->
-
-    <router-link class="nav-item" v-for="link in links" :key="link.name" :to="link.link" :class="[link.name === $route.name ? 'active' : '']">
+    <router-link class="nav-item" v-for="link in links" :key="link.name" :to="link.link">
       {{ link.name }}
     </router-link>
   </div>
@@ -71,14 +61,14 @@ export default {
   margin: 0 1em;
   font-size: 12pt;
   text-decoration: none;
-  color: #000a;
+  color: #2c3e50;
   font-weight: bold;
   transition: border-bottom-color .5s ease, color .5s ease;
   border-bottom-color: transparent;
 
-  &.active {
+  &:not(.nav-title).router-link-exact-active {
     color: black;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid #f1bb33;
     margin-bottom: -2px;
   }
 }
