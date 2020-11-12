@@ -2,17 +2,20 @@
   <div id="app">
     <Navbar />
     <router-view />
+    <FooterInfo />
   </div>
 </template>
 
 <script>
-  import Navbar from "./components/Navbar.vue"
-  export default {
-    name: 'App',
-    components: {
-      Navbar
-    }
+import Navbar from "./components/Navbar.vue";
+import FooterInfo from "./components/FooterInfo.vue";
+export default {
+  name: 'App',
+  components: {
+    Navbar,
+    FooterInfo
   }
+};
 </script>
 
 <style lang="scss">

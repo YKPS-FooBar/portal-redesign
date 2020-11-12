@@ -11,8 +11,10 @@
     </router-link>
   </div>
 </template>
+
 <script>
 export default {
+  name: 'Navbar',
   data() {
     return {
       links: [
@@ -38,7 +40,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 .nav {
   margin: 1.5em 2em;
 
