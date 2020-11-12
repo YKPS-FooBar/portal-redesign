@@ -17,19 +17,11 @@
     "home": true
   },
   {
-  "name": "PS Learning",
-  "url": "https://ykpaoschool.learning.powerschool.com/",
-  "icon": "Power_School.svg",
-  "color": "#ffffff",
-  "background": "#00427c",
-  "home": true
-  },
-  {
-    "name": "Mail",
-    "url": "http://mail.ykpaoschool.cn/",
-    "icon": "outlook.svg",
-    "color": "#201f1e",
-    "background": "#edebe9",
+    "name": "PS Learning",
+    "url": "https://ykpaoschool.learning.powerschool.com/",
+    "icon": "Power_School.svg",
+    "color": "#ffffff",
+    "background": "#00427c",
     "home": true
   },
   {
@@ -41,11 +33,19 @@
     "home": true
   },
   {
-    "name": "CHQ",
-    "url": "https://seasia.mychq.net/ykpao",
-    "icon": "chq.svg",
-    "color": "#690d6c",
-    "background": "#ffffff",
+    "name": "Mail",
+    "url": "http://mail.ykpaoschool.cn/",
+    "icon": "outlook.svg",
+    "color": "#201f1e",
+    "background": "#edebe9",
+    "home": true
+  },
+  {
+    "name": "Calendar",
+    "url": "https://outlook.office.com/calendar/view/month",
+    "icon": "calendar.svg",
+    "color": "#201f1e",
+    "background": "#edebe9",
     "home": true
   },
   {
@@ -54,6 +54,14 @@
     "icon": "onedrive.svg",
     "color": "#201f1e",
     "background": "#edebe9",
+    "home": true
+  },
+  {
+    "name": "CHQ",
+    "url": "https://seasia.mychq.net/ykpao",
+    "icon": "chq.svg",
+    "color": "#690d6c",
+    "background": "#ffffff",
     "home": true
   },
   {
@@ -69,13 +77,6 @@
     "icon": "brainpop.svg",
     "color": "#ffffff",
     "background": "#006666"
-  },
-  {
-    "name": "Calendar",
-    "url": "https://outlook.office.com/calendar/view/month",
-    "icon": "calendar.svg",
-    "color": "#201f1e",
-    "background": "#edebe9"
   },
   {
     "name": "Doddle",
@@ -136,10 +137,10 @@
     "background": "#ffffff"
   },
   {
-  "name": "Yammer",
-  "url": "https://www.yammer.com/ykpaoschool.cn/#/Threads/index?type=algo",
-  "icon": "yammer.svg",
-  "color": "#201f1e",
-  "background": "#edebe9"
+    "name": "Yammer",
+    "url": "https://www.yammer.com/ykpaoschool.cn/#/Threads/index?type=algo",
+    "icon": "yammer.svg",
+    "color": "#201f1e",
+    "background": "#edebe9"
   }
 ]
