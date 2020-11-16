@@ -13,8 +13,16 @@ if (session_status() === PHP_SESSION_NONE) {
   session_start();
 }
 
+// Constant array of files that can be uploaded and fetched
+// Keys indicate HTTP form names that refer to these files
+// The file is stored under uploads/$file
 $files = array('bulletin' => 'daily-bulletin.pdf', 'news' => 'news-updates.pdf');
-$file_lists = array('attachments');
+
+// Constant array of file lists (e.g. attachments) that can be uploaded and fetched
+// Keys indicate HTTP form names that refer to these lists
+// The files are stored under uploads/$file_list/*
+// Since it is multiple, each key should be the value appended with [], e.g. attachments[]
+$file_lists = array('attachments[]' => 'attachments');
 
 if (!is_dir('uploads')) {
   mkdir('uploads', 0777, true);
@@ -54,6 +62,7 @@ function update_time($file) {
   }
 }
 
+// Scans a directory and returns filename => update time array
 function dir_update_time($dir) {
   // scandir sorts alphabetically by default
   $filenames = array_diff(scandir($dir), array('.', '..'));
