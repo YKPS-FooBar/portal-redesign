@@ -16,15 +16,24 @@ if (session_status() === PHP_SESSION_NONE) {
 // Constant array of files that can be uploaded and fetched
 // Keys indicate HTTP form names that refer to these files
 // The file is stored under uploads/$filename
-$files = array('bulletin' => 'daily-bulletin.pdf', 'news' => 'news-updates.pdf');
-
-$file_titles = array('bulletin' => 'Daily Bulletin', 'news' => 'News & Updates');
+$files = array(
+  'bulletin' => 'daily-bulletin.pdf',
+  'news' => 'news-updates.pdf'
+);
 
 // Constant array of file lists (e.g. attachments) that can be uploaded and fetched
 // Keys indicate HTTP form names that refer to these lists
 // The files are stored under uploads/$file_list/*
 // Since it is multiple, each key should be the value appended with [], e.g. attachments[]
-$file_lists = array('attachments[]' => 'attachments');
+$file_lists = array(
+  'attachments[]' => 'attachments'
+);
+
+$file_titles = array(
+  'bulletin' => 'Daily Bulletin',
+  'news' => 'News & Updates',
+  'attachments[]' => 'Attachments'
+);
 
 if (!is_dir('uploads')) {
   mkdir('uploads', 0777, true);
