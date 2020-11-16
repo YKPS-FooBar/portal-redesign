@@ -11,3 +11,4 @@ find . -name *.png -delete
 find . -name *.svg -delete
 find . -name *.jpg -delete
 find . -name *.ico -delete
+rm -rf dist css js img images
