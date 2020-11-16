@@ -1,21 +1,9 @@
-// const webpack = require("webpack");
-
 module.exports = {
-  "transpileDependencies": [
-    "vuetify"
-  ],
-  // configureWebpack: {
-  //   module: {
-  //     rules: [
-  //       {
-  //         test: /\.(png|jpe?g|gif)$/i,
-  //         use: [
-  //           {
-  //             loader: 'file-loader',
-  //           },
-  //         ],
-  //       },
-  //     ]
-  //   }
-  // }
+  chainWebpack: config => {
+    config.module.rule('pdf').test(/\.pdf$/i).use('file-loader').loader('file-loader')
+    config.plugin('html').tap(args => {
+      args[0].title = 'YKPS Portal'
+      return args
+    })
+  }
 }

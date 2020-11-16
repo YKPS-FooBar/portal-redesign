@@ -1,29 +1,19 @@
 <template>
   <div id="app">
-    <Navbar />
+    <NavbarHeader />
     <router-view />
-    <FooterInfo />
+    <NavbarFooter />
   </div>
 </template>
 
 <script>
-import Navbar from "./components/Navbar.vue";
-import FooterInfo from "./components/FooterInfo.vue";
+import NavbarHeader from './components/NavbarHeader.vue'
+import NavbarFooter from './components/NavbarFooter.vue'
 export default {
   name: 'App',
   components: {
-    Navbar,
-    FooterInfo
+    NavbarHeader,
+    NavbarFooter
   }
-};
-</script>
-
-<style lang="scss">
-#app {
-  font-family: "Helvetica Now Display", Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
 }
-</style>
+</script>

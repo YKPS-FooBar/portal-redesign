@@ -5,8 +5,7 @@
     "icon": "powerschool.svg",
     "color": "#ffffff",
     "background": "#00427c",
-    "home": true,
-    "desc": "hi"
+    "home": true
   },
   {
     "name": "PowerTeacher",

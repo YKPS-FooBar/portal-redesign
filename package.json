@@ -9,17 +9,15 @@
   },
   "dependencies": {
     "@growthbunker/vuedarkmode": "^0.5.56",
+    "axios": "^0.21.0",
     "babel": "^6.23.0",
+    "bootstrap-vue": "^2.19.0",
     "core-js": "^3.6.5",
     "file-loader": "^6.0.0",
-    "material-icons": "^0.2.3",
-    "pdfvuer": "^1.7.1",
     "vue": "^2.6.11",
-    "vue-pdf-viewer-package": "^1.0.4",
+    "vue-pdf": "^4.2.0",
     "vue-router": "^3.4.3",
     "vue-sticky-directive": "0.0.10",
-    "vuesax": "^4.0.1-alpha.24",
-    "vuetify": "^2.3.9",
     "webpack": "^4.44.1"
   },
   "devDependencies": {
@@ -33,11 +31,8 @@
     "js-yaml-loader": "^1.2.2",
     "sass": "^1.19.0",
     "sass-loader": "^8.0.0",
-    "vue-cli-plugin-vuesax": "^1.0.0",
-    "vue-cli-plugin-vuetify": "^2.0.7",
     "vue-friendly-iframe": "^0.18.0",
-    "vue-template-compiler": "^2.6.11",
-    "vuetify-loader": "^1.6.0"
+    "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
     "root": true,

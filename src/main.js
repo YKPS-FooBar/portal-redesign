@@ -1,13 +1,10 @@
 import Vue from 'vue'
+import BootstrapVue from 'bootstrap-vue'
 import App from './App.vue'
-import './plugins/vuetify.js'
-import './plugins/vuesax.js'
-import 'vuesax/dist/vuesax.css'
 import router from './router'
-import './styles/main.css'
-import "material-icons/iconfont/material-icons.css"
+import './styles/custom.scss'
 
-Vue.config.productionTip = false
+Vue.use(BootstrapVue)
 
 new Vue({
   router,
