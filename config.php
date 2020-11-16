@@ -15,8 +15,10 @@ if (session_status() === PHP_SESSION_NONE) {
 
 // Constant array of files that can be uploaded and fetched
 // Keys indicate HTTP form names that refer to these files
-// The file is stored under uploads/$file
+// The file is stored under uploads/$filename
 $files = array('bulletin' => 'daily-bulletin.pdf', 'news' => 'news-updates.pdf');
+
+$file_titles = array('bulletin' => 'Daily Bulletin', 'news' => 'News & Updates');
 
 // Constant array of file lists (e.g. attachments) that can be uploaded and fetched
 // Keys indicate HTTP form names that refer to these lists
@@ -54,6 +56,7 @@ function must_login() {
   }
 }
 
+// The modification time of a file
 function update_time($file) {
   if (is_file($file)) {
     return date('M j H:i', filemtime($file));

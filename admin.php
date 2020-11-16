@@ -197,22 +197,24 @@ redirect_login();
     <h2 class="heading">Admin Portal</h2>
 
     <div class="upload-container">
-      <div id="bulletin-upload">
-        <div class="upload-area" target="bulletin-input">
-          <input id="bulletin-input" class="file-input" type="file" accept="application/pdf" name="bulletin">
-          <div class="upload-description">
-            <h2 class="label">Daily Bulletin</h2>
-            Drag or upload
-            <div class="error" for="bulletin"></div>
+      <?php foreach ($files as $name => $filename) { ?>
+        <div id="<?php echo $name; ?>-upload">
+          <div class="upload-area" target="<?php echo $name; ?>-input">
+            <input id="<?php echo $name; ?>-input" class="file-input" type="file" accept="application/pdf" name="<?php echo $name; ?>">
+            <div class="upload-description">
+              <h2 class="label"><?php echo $file_titles[$name]; ?></h2>
+              Drag or upload
+              <div class="error" for="<?php echo $name; ?>"></div>
+            </div>
+          </div>
+          <div class="status">
+            Updated: <span class="update-time" for="<?php echo $name; ?>"></span>
+            <a class="file-view" href="/uploads/<?php echo $filename; ?>" target="_blank">View</a>
           </div>
         </div>
-        <div class="status">
-          Updated: <span class="update-time" for="bulletin"></span>
-          <a class="file-view" href="/uploads/daily-bulletin.pdf" target="_blank">View</a>
-        </div>
-      </div>
+      <?php } ?>
 
-      <div id="news-upload">
+      <!-- <div id="news-upload">
         <div class="upload-area" target="news-input">
           <input id="news-input" class="file-input" type="file" accept="application/pdf" name="news">
           <div class="upload-description">
@@ -225,7 +227,7 @@ redirect_login();
           Updated: <span class="update-time" for="news"></span>
           <a class="file-view" href="/uploads/news-updates.pdf" target="_blank">View</a>
         </div>
-      </div>
+      </div> -->
 
       <div id="attachments-upload">
         <div class="upload-area" target="attachments-input">
