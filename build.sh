@@ -1,12 +1,26 @@
-rm */*.html
-rm */*.js
-rm */*.css
-rm */*.pdf
-rm */*.map
-rm */*.png
-rm */*.svg
-rm */*.jpg
-rm */*.ico
+cd "$(dirname "$0")"
+
+git checkout php
+
+rm -rf node_modules
+rm -f **/*.html
+rm -f *.html
+rm -f **/*.js
+rm -f *.js
+rm -f **/*.css
+rm -f *.css
+rm -f **/*.pdf
+rm -f *.pdf
+rm -f **/*.map
+rm -f *.map
+rm -f **/*.png
+rm -f *.png
+rm -f **/*.svg
+rm -f *.svg
+rm -f **/*.jpg
+rm -f *.jpg
+rm -f **/*.ico
+rm -f *.ico
 
 git checkout vuejs-bootstrap-vue
 yarn build
