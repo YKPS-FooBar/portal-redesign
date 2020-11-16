@@ -2,21 +2,12 @@ cd "$(dirname "$0")"
 
 rm -rf node_modules
 rm -rf uploads
-rm -f **/*.html
-rm -f *.html
-rm -f **/*.js
-rm -f *.js
-rm -f **/*.css
-rm -f *.css
-rm -f **/*.pdf
-rm -f *.pdf
-rm -f **/*.map
-rm -f *.map
-rm -f **/*.png
-rm -f *.png
-rm -f **/*.svg
-rm -f *.svg
-rm -f **/*.jpg
-rm -f *.jpg
-rm -f **/*.ico
-rm -f *.ico
+find . -name *.html -delete
+find . -name *.js -delete
+find . -name *.css -delete
+find . -name *.pdf -delete
+find . -name *.map -delete
+find . -name *.png -delete
+find . -name *.svg -delete
+find . -name *.jpg -delete
+find . -name *.ico -delete
