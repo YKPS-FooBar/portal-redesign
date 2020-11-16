@@ -1,6 +1,7 @@
 cd "$(dirname "$0")"
 
 rm -rf node_modules
+rm -rf uploads
 rm -f **/*.html
 rm -f *.html
 rm -f **/*.js
