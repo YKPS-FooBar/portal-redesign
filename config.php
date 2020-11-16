@@ -15,11 +15,14 @@ if (session_status() === PHP_SESSION_NONE) {
 define('FILES', array('daily-bulletin.pdf', 'news-updates.pdf'));
 define('FILE_LISTS', array('attachments'));
 
+if (!is_dir('uploads')) {
+  mkdir('uploads', 0777, true);
+}
+
 foreach (FILES as $file) {
   if (!file_exists('uploads/' . $file)) {
     touch('uploads/' . $file);
   }
-  error_log($file);
 }
 
 foreach (FILE_LISTS as $file_list) {

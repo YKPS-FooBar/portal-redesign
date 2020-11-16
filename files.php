@@ -18,6 +18,6 @@ if (!in_array($dir, $file_lists)) {
     exit;
 }
 
-echo json_encode(dir_update_time($dir));
+echo json_encode(dir_update_time('uploads/' . $dir));
 
 ?>
