@@ -9,7 +9,7 @@
           <Card v-for="file in files" :key="file.id" :modal="`modal-${file.id}`" :icon="file.icon" :name="file.name" />
 
           <b-modal v-for="file in files" :key="`modal-${file.id}`" :id="`modal-${file.id}`" size="xl" centered  hide-footer scrollable :title="file.name">
-            <pdf :src="`/uploads/${file.filename}`"></pdf>
+            <pdf v-for="index in file.numPages" :key="index" :src="file.src" :page="index"></pdf>
             <b-card v-if="file.attachments" no-body header="Attachments">
               <b-list-group flush>
                 <b-list-group-item v-for="filename in file.attachments" :key="filename">
@@ -49,6 +49,8 @@ export default {
         name: 'Daily Bulletin',
         icon: 'dailybulletin.svg',
         filename: 'daily-bulletin.pdf',
+        src: pdf.createLoadingTask('/uploads/daily-bulletin.pdf'),
+        numPages: null,
         attachmentName: 'attachments[]',
         attachments: []
       },
@@ -56,12 +58,16 @@ export default {
         id: 1,
         name: 'News & Updates',
         icon: 'newsupddates.svg',
-        filename: 'news-updates.pdf'
+        filename: 'news-updates.pdf',
+        src: pdf.createLoadingTask('/uploads/news-updates.pdf'),
+        numPages: null
       }
     ]
   }),
   mounted() {
     this.files.forEach(file => {
+      file.src.promise.then(pdf => file.numPages = pdf.numPages)
+
       if ('attachmentName' in file) {
         const data = new FormData()
         data.append('name', file.attachmentName)
@@ -69,9 +75,7 @@ export default {
           headers: {
             'Content-Type': 'multipart/form-data'
           }
-        }).then(response => {
-          file.attachments = Object.keys(response.data).sort()
-        })
+        }).then(response => file.attachments = Object.keys(response.data).sort())
       }
     })
   },
