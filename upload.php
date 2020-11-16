@@ -13,24 +13,32 @@ function move_file($filename, $destination) {
   if (!is_dir(dirname($destination))) {
     mkdir(dirname($destination), 0777, true);
   }
+
   move_uploaded_file($filename, $destination);
   return update_time($destination);
 }
 
-if (isset($_FILES['bulletin'])) {
-  $upload_times = move_file($_FILES['bulletin']['tmp_name'], 'uploads/daily-bulletin.pdf');
-} elseif (isset($_FILES['news'])) {
-  $upload_times = move_file($_FILES['news']['tmp_name'], 'uploads/news-updates.pdf');
-} elseif (isset($_FILES['attachments'])) {
-  $upload_times = array();
-  foreach ($_FILES['attachments']['name'] as $i => $name) {
-    $upload_times[$name] = move_file($_FILES['attachments']['tmp_name'][$i], 'uploads/attachments/' . basename($name));
+// If matches a file name, save the file
+foreach ($files as $name => $filename) {
+  if (isset($_FILES[$name])) {
+    $upload_times = move_file($_FILES[$name]['tmp_name'], 'uploads/' . $filename);
+    echo json_encode($upload_times);
+    exit;
   }
-} else {
-  http_response_code(400);
-  exit;
 }
 
-echo json_encode($upload_times);
+// If matches a file list name, save the files
+foreach ($file_lists as $file_list) {
+  if (isset($_FILES[$file_list])) {
+    $upload_times = array();
+    foreach ($_FILES[$file_list]['name'] as $i => $name) {
+      $upload_times[basename($name)] = move_file($_FILES[$file_list]['tmp_name'][$i], 'uploads/' . $file_list . '/' . basename($name));
+    }
+    echo json_encode($upload_times);
+    exit;
+  }
+}
+
+http_response_code(400);
 
 ?>

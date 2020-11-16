@@ -1,5 +1,6 @@
 <?php
 
+// These may not always work; please set these in php.ini
 ini_set('memory_limit', '256M');
 ini_set('post_max_size', '512M');
 ini_set('file_uploads', 'On');
@@ -12,20 +13,20 @@ if (session_status() === PHP_SESSION_NONE) {
   session_start();
 }
 
-define('FILES', array('daily-bulletin.pdf', 'news-updates.pdf'));
-define('FILE_LISTS', array('attachments'));
+$files = array('bulletin' => 'daily-bulletin.pdf', 'news' => 'news-updates.pdf');
+$file_lists = array('attachments');
 
 if (!is_dir('uploads')) {
   mkdir('uploads', 0777, true);
 }
 
-foreach (FILES as $file) {
+foreach ($files as $file) {
   if (!file_exists('uploads/' . $file)) {
     touch('uploads/' . $file);
   }
 }
 
-foreach (FILE_LISTS as $file_list) {
+foreach ($file_lists as $file_list) {
   if (!is_dir('uploads/' . $file_list)) {
     mkdir('uploads/' . $file_list, 0777, true);
   }

@@ -2,8 +2,6 @@
 
 include('config.php');
 
-$file_lists = array('attachments');
-
 if (!isset($_POST['name']) || !substr_compare($_POST['name'], '[]', -2) === 0) {
   http_response_code(400);
   echo 'Invalid request';
