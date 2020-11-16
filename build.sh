@@ -1,7 +1,5 @@
 cd "$(dirname "$0")"
 
-git checkout php
-
 rm -rf node_modules
 rm -f **/*.html
 rm -f *.html
@@ -23,6 +21,7 @@ rm -f **/*.ico
 rm -f *.ico
 
 git checkout vuejs-bootstrap-vue
+yarn install
 yarn build
 git checkout php
 cp -r dist/ ./
