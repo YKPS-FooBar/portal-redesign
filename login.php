@@ -21,17 +21,17 @@ if ($attempt) {
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="/favicon.ico">
     <title>Admin Login | YKPS Portal</title>
     <style>
       :root {
         --color-shade: rgba(0, 0, 0, .05);
-        --color-text-main: #2c3e50;
+        --color-text-main: #212529;
         --color-text-muted: #6c757d;
         --color-text-link: #0366d6;
         --color-text-error: #dc3545;
@@ -51,17 +51,13 @@ if ($attempt) {
       }
 
       body {
-        font-family: Helvetica Now Display, Helvetica, sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
         margin: 0;
         line-height: 1.5;
         color: var(--color-text-main);
       }
 
-      .login {
-        text-align: center;
-      }
-
-      .heading {
+      .login, .heading {
         text-align: center;
       }
     </style>
