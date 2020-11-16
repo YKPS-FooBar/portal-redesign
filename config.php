@@ -12,15 +12,20 @@ if (session_status() === PHP_SESSION_NONE) {
   session_start();
 }
 
-define('FILES', array('daily-bulletin.pdf', 'news-updates.pdf'))
+define('FILES', array('daily-bulletin.pdf', 'news-updates.pdf'));
 define('FILE_LISTS', array('attachments'));
 
 foreach (FILES as $file) {
-  touch('uploads/' . $file);
+  if (!file_exists('uploads/' . $file)) {
+    touch('uploads/' . $file);
+  }
+  error_log($file);
 }
 
 foreach (FILE_LISTS as $file_list) {
-  mkdir('uploads/' . $file_list, 0777, true);
+  if (!is_dir('uploads/' . $file_list)) {
+    mkdir('uploads/' . $file_list, 0777, true);
+  }
 }
 
 function redirect_login() {
