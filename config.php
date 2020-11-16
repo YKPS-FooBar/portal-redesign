@@ -12,9 +12,16 @@ if (session_status() === PHP_SESSION_NONE) {
   session_start();
 }
 
-touch('uploads/daily-bulletin.pdf');
-touch('uploads/news-updates.pdf');
-mkdir('uploads/attachments/', 0777, true);
+define('FILES', array('daily-bulletin.pdf', 'news-updates.pdf'))
+define('FILE_LISTS', array('attachments'));
+
+foreach (FILES as $file) {
+  touch('uploads/' . $file);
+}
+
+foreach (FILE_LISTS as $file_list) {
+  mkdir('uploads/' . $file_list, 0777, true);
+}
 
 function redirect_login() {
   if (!isset($_SESSION['logged'])) {

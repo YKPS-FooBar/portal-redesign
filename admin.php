@@ -208,7 +208,7 @@ redirect_login();
         </div>
         <div class="status">
           Updated: <span class="update-time" for="bulletin"></span>
-          <a class="file-view" href="/images/icons/daily-bulletin.pdf" target="_blank">View</a>
+          <a class="file-view" href="/uploads/daily-bulletin.pdf" target="_blank">View</a>
         </div>
       </div>
 
@@ -223,7 +223,7 @@ redirect_login();
         </div>
         <div class="status">
           Updated: <span class="update-time" for="news"></span>
-          <a class="file-view" href="/images/icons/news-updates.pdf" target="_blank">View</a>
+          <a class="file-view" href="/uploads/news-updates.pdf" target="_blank">View</a>
         </div>
       </div>
 
@@ -242,9 +242,9 @@ redirect_login();
 
     <script>
       const fileUpdateTimes = <?php echo json_encode(array(
-        'bulletin' => update_time('images/icons/daily-bulletin.pdf'),
-        'news' => update_time('images/icons/news-updates.pdf'),
-        'attachments[]' => dir_update_time('attachments'),
+        'bulletin' => update_time('uploads/daily-bulletin.pdf'),
+        'news' => update_time('uploads/news-updates.pdf'),
+        'attachments[]' => dir_update_time('uploads/attachments'),
       )); ?>;
 
       const reloadUpdateTimes = name => {
@@ -269,7 +269,7 @@ redirect_login();
             filenameText.classList.add('filename');
 
             const link = document.createElement('a');
-            link.href = `/${name.replace(/\[\]$/, '')}/${encodeURIComponent(filename)}`;
+            link.href = `/uploads/${name.replace(/\[\]$/, '')}/${encodeURIComponent(filename)}`;
             link.target = '_blank';
             link.innerText = filename;
             filenameText.appendChild(link);

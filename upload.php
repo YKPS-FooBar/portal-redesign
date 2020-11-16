@@ -18,13 +18,13 @@ function move_file($filename, $destination) {
 }
 
 if (isset($_FILES['bulletin'])) {
-  $upload_times = move_file($_FILES['bulletin']['tmp_name'], 'images/icons/daily-bulletin.pdf');
+  $upload_times = move_file($_FILES['bulletin']['tmp_name'], 'uploads/daily-bulletin.pdf');
 } elseif (isset($_FILES['news'])) {
-  $upload_times = move_file($_FILES['news']['tmp_name'], 'images/icons/news-updates.pdf');
+  $upload_times = move_file($_FILES['news']['tmp_name'], 'uploads/news-updates.pdf');
 } elseif (isset($_FILES['attachments'])) {
   $upload_times = array();
   foreach ($_FILES['attachments']['name'] as $i => $name) {
-    $upload_times[$name] = move_file($_FILES['attachments']['tmp_name'][$i], 'attachments/' . basename($name));
+    $upload_times[$name] = move_file($_FILES['attachments']['tmp_name'][$i], 'uploads/attachments/' . basename($name));
   }
 } else {
   http_response_code(400);
