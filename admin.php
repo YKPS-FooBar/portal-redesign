@@ -7,17 +7,17 @@ redirect_login();
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="/favicon.ico">
     <title>Admin | YKPS Portal</title>
     <style>
       :root {
         --color-shade: rgba(0, 0, 0, .05);
-        --color-text-main: #2c3e50;
+        --color-text-main: #212529;
         --color-text-muted: #6c757d;
         --color-text-link: #0366d6;
         --color-text-error: #dc3545;
@@ -37,7 +37,7 @@ redirect_login();
       }
 
       body {
-        font-family: Helvetica Now Display, Helvetica, sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
         margin: 0;
         line-height: 1.5;
         color: var(--color-text-main);
@@ -214,40 +214,32 @@ redirect_login();
         </div>
       <?php } ?>
 
-      <!-- <div id="news-upload">
-        <div class="upload-area" target="news-input">
-          <input id="news-input" class="file-input" type="file" accept="application/pdf" name="news">
-          <div class="upload-description">
-            <h2 class="label">News & Updates</h2>
-            Drag or upload
-            <div class="error" for="news"></div>
+      <?php foreach ($file_lists as $name => $file_list) { ?>
+        <div id="<?php echo $file_list; ?>-upload">
+          <div class="upload-area" target="<?php echo $file_list; ?>-input">
+            <input id="<?php echo $file_list; ?>-input" class="file-input" type="file" name="<?php echo $name; ?>" multiple>
+            <div class="upload-description">
+              <h2 class="label"><?php echo $file_titles[$name]; ?></h2>
+              Drag or upload
+              <div class="error" for="<?php echo $name; ?>"></div>
+            </div>
           </div>
+          <div class="file-list" for="<?php echo $name; ?>"></div>
         </div>
-        <div class="status">
-          Updated: <span class="update-time" for="news"></span>
-          <a class="file-view" href="/uploads/news-updates.pdf" target="_blank">View</a>
-        </div>
-      </div> -->
-
-      <div id="attachments-upload">
-        <div class="upload-area" target="attachments-input">
-          <input id="attachments-input" class="file-input" type="file" name="attachments[]" multiple>
-          <div class="upload-description">
-            <h2 class="label">Attachments</h2>
-            Drag or upload
-            <div class="error" for="attachments[]"></div>
-          </div>
-        </div>
-        <div class="file-list" for="attachments[]"></div>
-      </div>
+      <?php } ?>
     </div>
 
     <script>
-      const fileUpdateTimes = <?php echo json_encode(array(
-        'bulletin' => update_time('uploads/daily-bulletin.pdf'),
-        'news' => update_time('uploads/news-updates.pdf'),
-        'attachments[]' => dir_update_time('uploads/attachments'),
-      )); ?>;
+      <?php
+        $update_times = array();
+        foreach ($files as $name => $filename) {
+          $update_times[$name] = update_time('uploads/' . $filename);
+        }
+        foreach ($file_lists as $name => $file_list) {
+          $update_times[$name] = dir_update_time('uploads/' . $file_list);
+        }
+      ?>
+      const fileUpdateTimes = <?php echo json_encode($update_times); ?>;
 
       const reloadUpdateTimes = name => {
         const single = typeof fileUpdateTimes[name] === 'string';
