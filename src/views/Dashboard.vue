@@ -66,7 +66,10 @@ export default {
   }),
   mounted() {
     this.files.forEach(file => {
-      file.src.promise.then(pdf => file.numPages = pdf.numPages)
+      file.src.promise.then(pdf => {
+        console.log(file, pdf)
+        file.numPages = pdf.numPages
+      })
 
       if ('attachmentName' in file) {
         const data = new FormData()
