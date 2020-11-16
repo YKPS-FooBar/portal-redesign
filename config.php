@@ -12,6 +12,10 @@ if (session_status() === PHP_SESSION_NONE) {
   session_start();
 }
 
+touch('uploads/daily-bulletin.pdf');
+touch('uploads/news-updates.pdf');
+mkdir('uploads/attachments/', 0777, true);
+
 function redirect_login() {
   if (!isset($_SESSION['logged'])) {
     header('Location: /login.php');
