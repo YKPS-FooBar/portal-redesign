@@ -8,12 +8,8 @@
         <b-card-group deck style="max-width: 60em;">
           <Card v-for="file in files" :key="file.id" :modal="`modal-${file.id}`" :icon="file.icon" :name="file.name" />
 
-          <!-- static so that it is only rendered once on DOM load -->
           <b-modal v-for="file in files" :key="`modal-${file.id}`" :id="`modal-${file.id}`" size="xl" centered hide-footer scrollable :title="file.name">
-            <div v-if="file.numPages === null">Loading...</div>
-            <div v-else>
-              <pdf v-for="index in file.numPages" :key="index" :src="file.src" :page="index"></pdf>
-            </div>
+            <PDFViewer :src="file.src" />
             <b-card v-if="file.attachments" no-body header="Attachments">
               <b-list-group flush>
                 <b-list-group-item v-for="filename in file.attachments" :key="filename">
@@ -39,9 +35,9 @@
 
 <script>
 import Card from '@/components/Card.vue'
+import PDFViewer from '@/components/PDFViewer.vue'
 import links from '@/data/links.json'
 import axios from 'axios'
-import pdf from 'vue-pdf'
 
 export default {
   name: 'Dashboard',
@@ -52,8 +48,7 @@ export default {
         id: 0,
         name: 'Daily Bulletin',
         icon: 'dailybulletin.svg',
-        src: pdf.createLoadingTask('/uploads/daily-bulletin.pdf'),
-        numPages: null,
+        src: '/uploads/daily-bulletin.pdf',
         attachmentName: 'attachments[]',
         attachments: []
       },
@@ -61,15 +56,12 @@ export default {
         id: 1,
         name: 'News & Updates',
         icon: 'newsupddates.svg',
-        src: pdf.createLoadingTask('/uploads/news-updates.pdf'),
-        numPages: null
+        src: '/uploads/news-updates.pdf',
       }
     ]
   }),
   mounted() {
     this.files.forEach(file => {
-      file.src.promise.then(pdf => file.numPages = pdf.numPages)
-
       if ('attachmentName' in file) {
         const data = new FormData()
         data.append('name', file.attachmentName)
@@ -83,7 +75,7 @@ export default {
   },
   components: {
     Card,
-    pdf
+    PDFViewer
   },
   computed: {
     homeLinks: () => links.filter(link => link.home)
