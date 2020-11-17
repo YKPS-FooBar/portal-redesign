@@ -1,5 +1,5 @@
 <template>
-  <div v-if="numPages === null">Loading...</div>
+  <b-skeleton-img v-if="numPages === null" no-aspect width="100%" height="100vh"></b-skeleton-img>
   <div v-else>
     <pdf v-for="index in numPages" :key="index" :src="loadingTask" :page="index"></pdf>
   </div>
