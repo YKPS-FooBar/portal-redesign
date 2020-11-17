@@ -9,7 +9,7 @@ $found = $attempt && isset($users[$_POST['username']]) && $_POST['password'] ===
 
 if ($found) {
   $_SESSION['logged'] = true;
-  $_SESSION['username'] = $POST['username'];
+  $_SESSION['username'] = $_POST['username'];
   header('Location: /admin.php');
   exit;
 }
