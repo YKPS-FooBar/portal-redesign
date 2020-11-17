@@ -35,7 +35,8 @@ export default {
   box-shadow: 0 .5em 1.5em rgba(0, 0, 0, 0.2);
   transition: box-shadow 200ms ease, padding 200ms ease;
 
-  &:hover, &:focus {
+  /* Hover <b-card> or focus (using tab etc) <b-link> */
+  &:hover, :focus > & {
     box-shadow: 0 .5em 1.5em rgba(0, 0, 0, 0.5);
     padding: 1em;
   }
