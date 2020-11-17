@@ -1,11 +1,13 @@
 # portal-redesign
 
-To build for backend, you can do
+To copy build webpages to backend, you can do
 ```sh
 sh deploy.sh
 ```
 which automatically sets up and builds the Vue.js frontend and creates a backend git branch at `./backend/` and dumps the built files there.
 Once you do that, you can add and commit the backend.
+
+For an actual deployment of the backend, refer to the [Backend README](https://github.com/YKPS-FooBar/portal-redesign/blob/php/README.md).
 
 ## Project setup
 ```sh
