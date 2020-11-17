@@ -9,8 +9,8 @@
           <Card v-for="file in files" :key="file.id" :modal="`modal-${file.id}`" :icon="file.icon" :name="file.name" />
 
           <!-- static so that it is only rendered once on DOM load -->
-          <b-modal v-for="file in files" :key="`modal-${file.id}`" :id="`modal-${file.id}`" size="xl" static centered hide-footer scrollable :title="file.name">
-            <pdf v-for="index in file.numPages" :key="index" :src="file.src" :page="index"></pdf>
+          <b-modal v-for="file in files" :key="`modal-${file.id}`" :id="`modal-${file.id}`" size="xl" centered hide-footer scrollable :title="file.name">
+            <pdf v-if="file.numPages !== null" v-for="index in file.numPages" :key="index" :src="file.src" :page="index"></pdf>
             <b-card v-if="file.attachments" no-body header="Attachments">
               <b-list-group flush>
                 <b-list-group-item v-for="filename in file.attachments" :key="filename">
