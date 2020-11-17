@@ -3,19 +3,19 @@
 This is the backend with built frontend files included, running on PHP.
 
 1. [Preparation](#preparation)
-  1. [Download](#download)
-  2. [PHP Config](#php-config)
-  3. [Server Config](#server-config)
-    1. [Example Apache Virtual Hosts](#example-apache-virtual-hosts)
-    2. [Example nginx with PHP-FPM](#example-nginx-with-php-fpm)
+    1. [Download](#download)
+    2. [PHP Config](#php-config)
+    3. [Server Config](#server-config)
+        1. [Example Apache Virtual Hosts](#example-apache-virtual-hosts)
+        2. [Example nginx with PHP-FPM](#example-nginx-with-php-fpm)
 2. [Test on Local](#test-on-local)
 3. [API Documentation](#api-documentation)
-  1. [GET `login.php`](#get-loginphp)
-  2. [POST `login.php`](#post-loginphp)
-  3. [GET `admin.php`](#get-adminphp)
-  4. [POST `files.php`](#post-filesphp)
-  5. [POST `remove.php`](#post-removephp)
-  6. [POST `upload.php`](#post-uploadphp)
+    1. [GET `login.php`](#get-loginphp)
+    2. [POST `login.php`](#post-loginphp)
+    3. [GET `admin.php`](#get-adminphp)
+    4. [POST `files.php`](#post-filesphp)
+    5. [POST `remove.php`](#post-removephp)
+    6. [POST `upload.php`](#post-uploadphp)
 
 ## Preparation
 
