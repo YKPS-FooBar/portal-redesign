@@ -8,7 +8,8 @@
         <b-card-group deck style="max-width: 60em;">
           <Card v-for="file in files" :key="file.id" :modal="`modal-${file.id}`" :icon="file.icon" :name="file.name" />
 
-          <b-modal v-for="file in files" :key="`modal-${file.id}`" :id="`modal-${file.id}`" size="xl" centered  hide-footer scrollable :title="file.name">
+          <!-- static so that it is only rendered once on DOM load -->
+          <b-modal v-for="file in files" :key="`modal-${file.id}`" :id="`modal-${file.id}`" size="xl" static centered hide-footer scrollable :title="file.name">
             <pdf v-for="index in file.numPages" :key="index" :src="file.src" :page="index"></pdf>
             <b-card v-if="file.attachments" no-body header="Attachments">
               <b-list-group flush>
@@ -48,7 +49,6 @@ export default {
         id: 0,
         name: 'Daily Bulletin',
         icon: 'dailybulletin.svg',
-        filename: 'daily-bulletin.pdf',
         src: pdf.createLoadingTask('/uploads/daily-bulletin.pdf'),
         numPages: null,
         attachmentName: 'attachments[]',
@@ -58,7 +58,6 @@ export default {
         id: 1,
         name: 'News & Updates',
         icon: 'newsupddates.svg',
-        filename: 'news-updates.pdf',
         src: pdf.createLoadingTask('/uploads/news-updates.pdf'),
         numPages: null
       }
@@ -66,10 +65,7 @@ export default {
   }),
   mounted() {
     this.files.forEach(file => {
-      file.src.promise.then(pdf => {
-        console.log(file, pdf)
-        file.numPages = pdf.numPages
-      })
+      file.src.promise.then(pdf => file.numPages = pdf.numPages)
 
       if ('attachmentName' in file) {
         const data = new FormData()
