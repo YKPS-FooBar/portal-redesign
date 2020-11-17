@@ -1,13 +1,3 @@
 .DS_Store
 
 uploads/
-
-*.html
-*.js
-*.css
-*.pdf
-*.map
-*.png
-*.svg
-*.jpg
-*.ico
