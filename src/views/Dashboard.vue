@@ -10,7 +10,10 @@
 
           <!-- static so that it is only rendered once on DOM load -->
           <b-modal v-for="file in files" :key="`modal-${file.id}`" :id="`modal-${file.id}`" size="xl" centered hide-footer scrollable :title="file.name">
-            <pdf v-if="file.numPages !== null" v-for="index in file.numPages" :key="index" :src="file.src" :page="index"></pdf>
+            <div v-if="file.numPages === null">Loading...</div>
+            <div v-else>
+              <pdf v-for="index in file.numPages" :key="index" :src="file.src" :page="index"></pdf>
+            </div>
             <b-card v-if="file.attachments" no-body header="Attachments">
               <b-list-group flush>
                 <b-list-group-item v-for="filename in file.attachments" :key="filename">
