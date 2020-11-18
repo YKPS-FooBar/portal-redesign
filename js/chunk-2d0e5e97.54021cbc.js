@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0e5e97"],{9703:function(e,n,t){"use strict";t.r(n);var o=function(){var e=this,n=e.$createElement,t=e._self._c||n;return t("main",[t("b-container",{staticClass:"mb-5"},[t("h1",[e._v("Page Not Found")]),e._v(" Sorry, we couldn't find the resource you requested. ")])],1)},u=[],r={name:"NotFound"},a=r,c=t("2877"),s=Object(c["a"])(a,o,u,!1,null,null,null);n["default"]=s.exports}}]);
+//# sourceMappingURL=chunk-2d0e5e97.54021cbc.js.map
