@@ -1,7 +1,7 @@
 <template>
   <b-skeleton-img v-if="numPages === null" no-aspect width="100%" height="100vh"></b-skeleton-img>
   <div v-else>
-    <pdf v-for="index in numPages" :key="index" :src="loadingTask" :page="index"></pdf>
+    <pdf v-for="index in numPages" :key="index" :src="loadingTask" :page="index" style="overflow-x: hidden;"></pdf>
   </div>
 </template>
 
