@@ -6,7 +6,7 @@
       <b-link :href="link" v-b-modal="modal" class="flex-grow-1 d-flex text-decoration-none text-reset">
         <b-card-body class="d-flex flex-column align-items-center hover-shadow">
           <div class="flex-grow-1 d-flex flex-column align-items-center justify-content-center">
-            <b-card-img :src="require(`../../public/images/icons/${icon}`)" :alt="name" style="object-fit: contain;" :style="named ? 'max-width: 80%; max-height: 80%;' : 'max-width: 100%; max-height: 100%;'"></b-card-img>
+            <b-card-img :src="require(`../../public/images/icons/${icon}`)" :alt="name" style="object-fit: contain;" :style="named ? 'max-width: 75%; max-height: 75%;' : 'max-width: 100%; max-height: 100%;'"></b-card-img>
           </div>
           <b-card-text v-if="named">
             {{ name }}

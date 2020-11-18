@@ -3,143 +3,123 @@
     "name": "PowerSchool",
     "url": "https://powerschool.ykpaoschool.cn/public/",
     "icon": "powerschool.svg",
-    "color": "#ffffff",
-    "background": "#00427c",
     "home": true
   },
   {
     "name": "PowerTeacher",
     "url": "https://powerschool.ykpaoschool.cn/teachers/pw.html",
     "icon": "powerschool.svg",
-    "color": "#ffffff",
-    "background": "#00427c",
     "home": true
   },
   {
     "name": "PS Learning",
     "url": "https://ykpaoschool.learning.powerschool.com/",
-    "icon": "Power_School.svg",
-    "color": "#ffffff",
-    "background": "#00427c",
+    "icon": "powerschool-learning.svg",
     "home": true
   },
   {
     "name": "ManageBac",
     "url": "https://ykps.managebac.cn/",
     "icon": "managebac.svg",
-    "color": "#293041",
-    "background": "#eff6ff",
     "home": true
   },
   {
     "name": "Mail",
     "url": "http://mail.ykpaoschool.cn/",
     "icon": "outlook.svg",
-    "color": "#201f1e",
-    "background": "#edebe9",
     "home": true
   },
   {
     "name": "Calendar",
     "url": "https://outlook.office.com/calendar/view/month",
     "icon": "calendar.svg",
-    "color": "#201f1e",
-    "background": "#edebe9",
     "home": true
   },
   {
     "name": "OneDrive",
     "url": "https://ykpaoschool-my.sharepoint.com/_layouts/15/MySite.aspx?MySiteRedirect=AllDocuments",
     "icon": "onedrive.svg",
-    "color": "#201f1e",
-    "background": "#edebe9",
     "home": true
   },
   {
     "name": "CHQ",
     "url": "https://seasia.mychq.net/ykpao",
     "icon": "chq.svg",
-    "color": "#690d6c",
-    "background": "#ffffff",
     "home": true
   },
   {
     "name": "Atlas Rubicon",
     "url": "http://ykpaoschool.rubiconatlas.org/Atlas/Authentication/View/Login",
-    "icon": "atlas-rubicon.svg",
-    "color": "#293041",
-    "background": "#eff6fe"
+    "icon": "atlas-rubicon.svg"
   },
   {
     "name": "BrainPop",
     "url": "https://www.brainpop.com/",
-    "icon": "brainpop.svg",
-    "color": "#ffffff",
-    "background": "#006666"
-  },
-  {
-    "name": "Doddle",
-    "url": "https://www.doddlelearn.co.uk/",
-    "icon": "doddle.svg",
-    "color": "#ff5f11",
-    "background": "#ffffff"
-  },
-  {
-    "name": "EducationCity",
-    "url": "https://ec3.educationcity.com/",
-    "icon": "educationcity.svg",
-    "color": "#ffffff",
-    "background": "#0fa9e0"
+    "icon": "brainpop.svg"
   },
   {
     "name": "Britannica Online",
     "url": "https://school.ebonline.com/levels",
-    "icon": "britannica.svg",
-    "wide_icon": true,
-    "color": "#ffffff",
-    "background": "#084466"
+    "icon": "britannica.svg"
+  },
+  {
+    "name": "Doddle",
+    "url": "https://www.doddlelearn.co.uk/",
+    "icon": "doddle.svg"
+  },
+  {
+    "name": "EducationCity",
+    "url": "https://ec3.educationcity.com/",
+    "icon": "educationcity.svg"
   },
   {
     "name": "History Today",
     "url": "https://www.historytoday.com/",
-    "icon": "history-today.svg",
-    "color": "#ffffff",
-    "background": "#000000"
+    "icon": "history-today.svg"
   },
   {
     "name": "Khan Academy",
     "url": "https://www.khanacademy.org/",
-    "icon": "khan-academy.svg",
-    "color": "#ffffff",
-    "background": "#0a2a66"
+    "icon": "khan-academy.svg"
   },
   {
     "name": "LibGuides",
     "url": "https://libguides.ykpaoschool.cn/",
-    "icon": "ykpao.svg",
-    "color": "#ffffff",
-    "background": "#357727"
+    "icon": "ykpao.svg"
+  },
+  {
+    "name": "Newsela",
+    "url": "https://newsela.com/",
+    "icon": "newsela.svg"
+  },
+  {
+    "name": "NoodleTools",
+    "url": "https://www.noodletools.com/",
+    "icon": "noodletools.png"
+  },
+  {
+    "name": "Proquest",
+    "url": "https://search.proquest.com/",
+    "icon": "proquest.svg"
+  },
+  {
+    "name": "Quizlet",
+    "url": "https://quizlet.com/",
+    "icon": "quizlet.svg"
   },
   {
     "name": "Today's Science",
     "url": "http://online.infobaselearning.com/",
-    "icon": "infobase.svg",
-    "wide_icon": true,
-    "color": "#363636",
-    "background": "#ffffff"
+    "icon": "infobase.svg"
   },
   {
     "name": "Turnitin",
     "url": "https://www.turnitin.com/login_page.asp?lang=en_us",
-    "icon": "tiiIcon.svg",
-    "color": "#1e7bbb",
-    "background": "#ffffff"
+    "icon": "turnitin.svg"
   },
   {
     "name": "Yammer",
     "url": "https://www.yammer.com/ykpaoschool.cn/#/Threads/index?type=algo",
-    "icon": "yammer.svg",
-    "color": "#201f1e",
-    "background": "#edebe9"
+    "icon": "yammer.svg"
   }
 ]
