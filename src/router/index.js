@@ -7,17 +7,22 @@ const routes = [
   {
     path: '/',
     name: 'Dashboard',
-    component: () => import('../views/Dashboard.vue')
+    component: () => import('@/views/Dashboard.vue')
   },
   {
     path: '/links',
     name: 'Links',
-    component: () => import('../views/Links.vue')
+    component: () => import('@/views/Links.vue')
   },
   {
     path: '/clubs',
     name: 'Clubs',
-    component: () => import('../views/Clubs.vue')
+    component: () => import('@/views/Clubs.vue')
+  },
+  {
+    path: '*',
+    name: 'Not Found',
+    component: () => import('@/views/NotFound.vue')
   }
 ]
 
