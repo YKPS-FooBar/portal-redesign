@@ -15,13 +15,13 @@ function move_file($filename, $destination) {
   }
 
   move_uploaded_file($filename, $destination);
-  return update_time($destination);
 }
 
 // If matches a file name, save the file
 foreach ($files as $name => $filename) {
   if (isset($_FILES[$name])) {
-    $upload_times = move_file($_FILES[$name]['tmp_name'], 'uploads/' . $filename);
+    move_file($_FILES[$name]['tmp_name'], 'uploads/' . $filename);
+    $upload_times = date('M j H:i');
     echo json_encode($upload_times);
     exit;
   }
@@ -32,7 +32,8 @@ foreach ($file_lists as $file_list) {
   if (isset($_FILES[$file_list])) {
     $upload_times = array();
     foreach ($_FILES[$file_list]['name'] as $i => $name) {
-      $upload_times[basename($name)] = move_file($_FILES[$file_list]['tmp_name'][$i], 'uploads/' . $file_list . '/' . basename($name));
+      move_file($_FILES[$file_list]['tmp_name'][$i], 'uploads/' . $file_list . '/' . basename($name));
+      $upload_times[basename($name)] = date('M j H:i');
     }
     echo json_encode($upload_times);
     exit;
