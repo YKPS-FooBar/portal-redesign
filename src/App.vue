@@ -9,6 +9,7 @@
 <script>
 import NavbarHeader from './components/NavbarHeader.vue'
 import NavbarFooter from './components/NavbarFooter.vue'
+
 export default {
   name: 'App',
   components: {

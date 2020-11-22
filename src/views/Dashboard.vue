@@ -65,11 +65,9 @@ export default {
       if ('attachmentName' in file) {
         const data = new FormData()
         data.append('name', file.attachmentName)
-        axios.post('/files.php', data, {
-          headers: {
-            'Content-Type': 'multipart/form-data'
-          }
-        }).then(response => file.attachments = Object.keys(response.data).sort())
+        axios
+          .post('/files.php', data, {headers: {'Content-Type': 'multipart/form-data'}})
+          .then(response => file.attachments = Object.keys(response.data).sort())
       }
     })
   },
